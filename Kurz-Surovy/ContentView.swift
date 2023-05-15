@@ -12,12 +12,10 @@ struct ContentView: View {
     let  pii = Float.pi
     
     var body: some View {
-        VStack {
-            SingleTextView(popis: "Prvy", farba: .blue)
-            SingleTextView(popis: "Druhy", farba: .green)
-            SingleTextView(popis: "Treti")
-                
+        NavigationView {
+        NavigationLink("Vzdialenost", destination: ConvertVzdialenostView())
         }
+        
     }
 }
 struct ContentView_Previews: PreviewProvider {
