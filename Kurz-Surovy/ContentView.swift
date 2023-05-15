@@ -12,27 +12,14 @@ struct ContentView: View {
     let  pii = Float.pi
     
     var body: some View {
-        ScrollView {
-            Group{
-                Text("\(pii)")
-                    .font(.largeTitle)
-                    .bold()
+        VStack {
+            SingleTextView(popis: "Prvy", farba: .blue)
+            SingleTextView(popis: "Druhy", farba: .green)
+            SingleTextView(popis: "Treti")
                 
-                Text(pozdrav)
-                
-            }
-       
         }
-        .frame(maxWidth: .infinity)
-        .padding(40)
-        .background(.red)
-        .cornerRadius(20)
-        .padding(20)
-        
-        .padding()
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

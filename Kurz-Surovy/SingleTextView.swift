@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct SingleTextView: View {
+    let popis: String
+    var farba: Color = .red
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(popis)
+            .frame(maxWidth: .infinity)
+            .padding(40)
+            .background(farba)
+            .cornerRadius(20)
+            .padding(20)
     }
 }
 
 struct SingleTextView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleTextView()
+        SingleTextView(popis: "ahoj svet")
     }
 }
