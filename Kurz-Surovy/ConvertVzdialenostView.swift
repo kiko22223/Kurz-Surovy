@@ -13,6 +13,31 @@ struct ConvertVzdialenostView: View {
     
     let vsetkyJednotky = ["Km", "m", "cm", "mm", "Mi", "Yd", "Ft", "In"]
     
+    var vstupnaVzdialenostMM: Double {
+        var konvertovanieNaMilimetre: Double
+        
+        switch vstupnaJednotka {
+        case "Km":
+            konvertovanieNaMilimetre = vstupnaVzdialenost * 1000000
+        case "m":
+            konvertovanieNaMilimetre = vstupnaVzdialenost * 1000
+        case "cm":
+            konvertovanieNaMilimetre = vstupnaVzdialenost * 10
+        case "mi":
+            konvertovanieNaMilimetre = vstupnaVzdialenost * 1609344
+        case "Yd":
+            konvertovanieNaMilimetre = vstupnaVzdialenost * 914.4
+        case "Ft":
+            konvertovanieNaMilimetre = vstupnaVzdialenost * 304.8
+        case "In":
+            konvertovanieNaMilimetre = vstupnaVzdialenost * 25.4
+        default:
+            konvertovanieNaMilimetre = vstupnaVzdialenost
+        }
+        
+        return konvertovanieNaMilimetre
+    }
+    
     var body: some View {
         Form{
             Section("Zadaj vstupne jednotky"){
@@ -25,6 +50,8 @@ struct ConvertVzdialenostView: View {
                     }
                 }
                 .pickerStyle(.segmented)
+                
+                Text("\(vstupnaVzdialenostMM)")
             }
             
             Section("Metricke") {
