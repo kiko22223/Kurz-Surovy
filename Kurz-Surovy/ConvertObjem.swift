@@ -50,13 +50,28 @@ struct ConvertObjem: View {
             }
             
             Section("Objemove Jednotky"){
-                ForEach(ObjemoveJednotky.allCases, id: \.self) {
-                    Text($0.rawValue)
+                ForEach(ObjemoveJednotky.allCases, id: \.self) { jednotka in
+                    let objemVypis = premen(vstupnyObjemML, output: ObjemoveJednotky(rawValue: jednotka.rawValue)!)
+                    Text("\(objemVypis, specifier: "%.2f") \(jednotka.rawValue)")
                 }
             }
             
         }
         .navigationTitle("Objem")
+    }
+    func premen(_ vstup: Double, output: ObjemoveJednotky) -> Double {
+        switch output {
+        case .liter:
+            return vstup / 1000
+        case .mililiter:
+            return vstup
+        case .cup:
+            return vstup / 236.588237
+        case .pint:
+            return vstup / 473.176473
+        case .gallon:
+            return vstup / 3785.41178
+        }
     }
 }
 
