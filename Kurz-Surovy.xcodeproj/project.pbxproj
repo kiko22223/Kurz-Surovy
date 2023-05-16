@@ -11,6 +11,7 @@
 		967FD6862A112EC30081BE81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ContentView.swift */; };
 		967FD6882A112EC40081BE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD6872A112EC40081BE81 /* Assets.xcassets */; };
 		967FD68B2A112EC40081BE81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD68A2A112EC40081BE81 /* Preview Assets.xcassets */; };
+		96EDABFA2A135C2700F614DC /* ConvertObjem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EDABF92A135C2700F614DC /* ConvertObjem.swift */; };
 		96FA13C62A127AE4000BCC84 /* ConvertVzdialenostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FA13C52A127AE4000BCC84 /* ConvertVzdialenostView.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		967FD6852A112EC30081BE81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		967FD6872A112EC40081BE81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		967FD68A2A112EC40081BE81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		96EDABF92A135C2700F614DC /* ConvertObjem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertObjem.swift; sourceTree = "<group>"; };
 		96FA13C52A127AE4000BCC84 /* ConvertVzdialenostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertVzdialenostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +55,7 @@
 		967FD6822A112EC30081BE81 /* Kurz-Surovy */ = {
 			isa = PBXGroup;
 			children = (
+				96EDABF92A135C2700F614DC /* ConvertObjem.swift */,
 				967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */,
 				967FD6852A112EC30081BE81 /* ContentView.swift */,
 				96FA13C52A127AE4000BCC84 /* ConvertVzdialenostView.swift */,
@@ -143,6 +146,7 @@
 				967FD6862A112EC30081BE81 /* ContentView.swift in Sources */,
 				96FA13C62A127AE4000BCC84 /* ConvertVzdialenostView.swift in Sources */,
 				967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */,
+				96EDABFA2A135C2700F614DC /* ConvertObjem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

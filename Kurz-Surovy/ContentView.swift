@@ -13,7 +13,11 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-        NavigationLink("Vzdialenost", destination: ConvertVzdialenostView())
+            List{
+                NavigationLink("Vzdialenost", destination: ConvertVzdialenostView())
+                NavigationLink("Objem", destination: ConvertObjem())
+            } .navigationTitle("Konvertor")
+        
         }
         
     }
