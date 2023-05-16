@@ -13,10 +13,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List{
-                NavigationLink("Vzdialenost", destination: ConvertVzdialenostView())
-                NavigationLink("Objem", destination: ConvertObjem())
-            } .navigationTitle("Konvertor")
+            ScrollView{
+                NavigationLink {
+                    ConvertVzdialenostView()
+                } label: {
+                    LinkView(topColor: .blue, bottomColor: .cyan, headerTitle: "Vzdialenost", titleImage: "image")
+                }
+                NavigationLink {
+                    ConvertObjem()
+                } label: {
+                    LinkView(topColor: .orange, bottomColor: .yellow, headerTitle: "Objem", titleImage: "image")
+                }
+                .navigationTitle("Konvertor")
+            }
         
         }
         
