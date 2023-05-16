@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		963224C72A14006400737D21 /* ConvertHmotnostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963224C62A14006400737D21 /* ConvertHmotnostView.swift */; };
 		967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */; };
 		967FD6862A112EC30081BE81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ContentView.swift */; };
 		967FD6882A112EC40081BE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD6872A112EC40081BE81 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		963224C62A14006400737D21 /* ConvertHmotnostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertHmotnostView.swift; sourceTree = "<group>"; };
 		967FD6802A112EC30081BE81 /* Kurz-Surovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kurz-Surovy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kurz_SurovyApp.swift; sourceTree = "<group>"; };
 		967FD6852A112EC30081BE81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		967FD6822A112EC30081BE81 /* Kurz-Surovy */ = {
 			isa = PBXGroup;
 			children = (
+				963224C62A14006400737D21 /* ConvertHmotnostView.swift */,
 				96EDABF92A135C2700F614DC /* ConvertObjem.swift */,
 				96EDABFB2A13635200F614DC /* LinkView.swift */,
 				967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */,
@@ -148,6 +151,7 @@
 			files = (
 				967FD6862A112EC30081BE81 /* ContentView.swift in Sources */,
 				96FA13C62A127AE4000BCC84 /* ConvertVzdialenostView.swift in Sources */,
+				963224C72A14006400737D21 /* ConvertHmotnostView.swift in Sources */,
 				967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */,
 				96EDABFA2A135C2700F614DC /* ConvertObjem.swift in Sources */,
 				96EDABFC2A13635200F614DC /* LinkView.swift in Sources */,

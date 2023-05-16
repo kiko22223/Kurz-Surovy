@@ -24,6 +24,11 @@ struct ContentView: View {
                 } label: {
                     LinkView(topColor: .orange, bottomColor: .yellow, headerTitle: "Objem", titleImage: "imageML")
                 }
+                NavigationLink {
+                    ConvertHmotnostView()
+                } label: {
+                    LinkView(topColor: .red, bottomColor: .blue, headerTitle: "Hmotnost", titleImage: "imageKG")
+                }
                 .navigationTitle("Konvertor")
             }
         
