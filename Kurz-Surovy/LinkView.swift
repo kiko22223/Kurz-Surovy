@@ -33,6 +33,12 @@ struct LinkView: View {
                 }
                 
                 Spacer()
+                Image(titleImage)
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .opacity(0.7)
+                    .offset(x:100, y: 0)
+                
             }
         }
         .frame(height: 150)
@@ -42,6 +48,6 @@ struct LinkView: View {
 
 struct LinkView_Previews: PreviewProvider {
     static var previews: some View {
-        LinkView(topColor: .red, bottomColor: .orange, headerTitle: "Titulok", titleImage: "image")
+        LinkView(topColor: .red, bottomColor: .orange, headerTitle: "Titulok", titleImage: "imageKM")
     }
 }

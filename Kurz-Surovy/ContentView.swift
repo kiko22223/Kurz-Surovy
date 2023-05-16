@@ -17,17 +17,18 @@ struct ContentView: View {
                 NavigationLink {
                     ConvertVzdialenostView()
                 } label: {
-                    LinkView(topColor: .blue, bottomColor: .cyan, headerTitle: "Vzdialenost", titleImage: "image")
+                    LinkView(topColor: .blue, bottomColor: .cyan, headerTitle: "Vzdialenost", titleImage: "imageKM")
                 }
                 NavigationLink {
                     ConvertObjem()
                 } label: {
-                    LinkView(topColor: .orange, bottomColor: .yellow, headerTitle: "Objem", titleImage: "image")
+                    LinkView(topColor: .orange, bottomColor: .yellow, headerTitle: "Objem", titleImage: "imageML")
                 }
                 .navigationTitle("Konvertor")
             }
         
         }
+        .navigationViewStyle(.stack)
         
     }
 }
