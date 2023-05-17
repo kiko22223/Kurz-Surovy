@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+enum hmotnostneJednotky: String, CaseIterable  {
+    case miligram = "mg"
+    case gram = "g"
+    case dekagram = "dk"
+    case kilogram = "kg"
+    case americkyCent = "q"
+    case tona = "T"
+}
+
 struct ConvertHmotnostView: View {
     
     @State private var vstupnaHmotsnost: Double = 0
