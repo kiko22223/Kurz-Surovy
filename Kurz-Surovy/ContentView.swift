@@ -27,8 +27,14 @@ struct ContentView: View {
                 NavigationLink {
                     ConvertHmotnostView()
                 } label: {
-                    LinkView(topColor: .red, bottomColor: .blue, headerTitle: "Hmotnost", titleImage: "imageKG")
+                    LinkView(topColor: .green, bottomColor: .blue, headerTitle: "Hmotnost", titleImage: "imageKG")
                 }
+                NavigationLink {
+                    ConvertTeplotaView()
+                } label: {
+                    LinkView(topColor: .red, bottomColor: .gray, headerTitle: "Teplota", titleImage: "imageC")
+                }
+                
                 .navigationTitle("Konvertor")
             }
         
