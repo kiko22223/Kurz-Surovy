@@ -49,6 +49,6 @@ struct LinkView: View {
 
 struct LinkView_Previews: PreviewProvider {
     static var previews: some View {
-        LinkView(topColor: .red, bottomColor: .orange, headerTitle: "Titulok", titleImage: "imageKM")
+        LinkView(topColor: .red, bottomColor: .orange, headerTitle: "Titulok", titleImage: "imageKM", units: Units(units: ["Unit1", "Unit2", "Unit3"], sections: [Section(title: "NameOfSection", units: [1, 2, 3])], ratios: [0.2, 3.2, 5.3]))
     }
 }

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+var units: Units!
 enum teplotneJednotky: String, CaseIterable {
     case Joule = "J"
     case NewtomMeter = "Nm"
