@@ -13,6 +13,7 @@ struct LinkView: View {
     let bottomColor: Color
     let headerTitle: String
     let titleImage: String
+    let units: Units
     
     var body: some View {
         ZStack{
