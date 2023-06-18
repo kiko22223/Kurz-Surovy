@@ -1,5 +1,5 @@
 //
-//  ConvertVzdialenostView.swift
+//  ConvertDetailView.swift
 //  Kurz-Surovy
 //
 //  Created by Christian Marušák on 15/05/2023.
