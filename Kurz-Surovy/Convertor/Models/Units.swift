@@ -5,7 +5,6 @@
 //  Created by Christian Marušák on 10/06/2023.
 //
 
-import Foundation
 struct Units {
     var units : [String]
     var sections : [Section]
@@ -17,8 +16,23 @@ struct Units {
               ratios.indices.contains(fromIndex),
               ratios.indices.contains(toIndex) else { return "" }
         let basicValue = value * ratios[fromIndex]
-        let toValue = basicValue / ratios[toIndex]
+        let toValue = normalize(number: basicValue / ratios[toIndex])
         return "\(toValue) \(toUnit)"
     }
+
+    private func normalize(number: Double) -> String {
+        var result = String(format: "%.9f", number)
+
+        while result.last == "0" {
+            result.removeLast()
+        }
+
+        if result.last == "." {
+            result.removeLast()
+        }
+
+        return result
+    }
+
     
 }

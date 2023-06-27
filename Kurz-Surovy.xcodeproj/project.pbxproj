@@ -44,6 +44,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37E24CD52A4B408D00C57487 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96CD96DF2A36405000A5AE89 /* LinkViewDescription.swift */,
+				969A1F3B2A351B00004311CC /* Section.swift */,
+				969A1F392A35181B004311CC /* Units.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		37E24CD62A4B4B8400C57487 /* SplitBill */ = {
+			isa = PBXGroup;
+			children = (
+				96D732252A4B3AA100BE6C55 /* SplitBill.swift */,
+			);
+			path = SplitBill;
+			sourceTree = "<group>";
+		};
+		37E24CD72A4B4B9D00C57487 /* Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				37E24CD82A4B4BDB00C57487 /* Views */,
+				37E24CD52A4B408D00C57487 /* Models */,
+				967FD6852A112EC30081BE81 /* ConvertMenuView.swift */,
+				96CD96E12A3643C000A5AE89 /* ConvertDetailView.swift */,
+			);
+			path = Convertor;
+			sourceTree = "<group>";
+		};
+		37E24CD82A4B4BDB00C57487 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96EDABFB2A13635200F614DC /* LinkView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		967FD6772A112EC30081BE81 = {
 			isa = PBXGroup;
 			children = (
@@ -63,14 +100,9 @@
 		967FD6822A112EC30081BE81 /* Kurz-Surovy */ = {
 			isa = PBXGroup;
 			children = (
-				96EDABFB2A13635200F614DC /* LinkView.swift */,
 				967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */,
-				967FD6852A112EC30081BE81 /* ConvertMenuView.swift */,
-				96D732252A4B3AA100BE6C55 /* SplitBill.swift */,
-				96CD96E12A3643C000A5AE89 /* ConvertDetailView.swift */,
-				96CD96DF2A36405000A5AE89 /* LinkViewDescription.swift */,
-				969A1F392A35181B004311CC /* Units.swift */,
-				969A1F3B2A351B00004311CC /* Section.swift */,
+				37E24CD72A4B4B9D00C57487 /* Convertor */,
+				37E24CD62A4B4B8400C57487 /* SplitBill */,
 				967FD6872A112EC40081BE81 /* Assets.xcassets */,
 				967FD6892A112EC40081BE81 /* Preview Content */,
 			);

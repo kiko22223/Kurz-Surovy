@@ -10,7 +10,7 @@ import SwiftUI
 struct LinkViewDescription {
     let title: String
     var imageName: String = ""
-    let gradientStartColor: Color
-    let gradientEndColor: Color
+    let topColor: Color
+    let bottomColor: Color
     let units: Units
 }
