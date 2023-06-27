@@ -7,32 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96024BC02A151E60009950AD /* ConvertTeplotaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96024BBF2A151E60009950AD /* ConvertTeplotaView.swift */; };
-		963224C72A14006400737D21 /* ConvertHmotnostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963224C62A14006400737D21 /* ConvertHmotnostView.swift */; };
 		967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */; };
-		967FD6862A112EC30081BE81 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ContentView.swift */; };
+		967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ConvertMenuView.swift */; };
 		967FD6882A112EC40081BE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD6872A112EC40081BE81 /* Assets.xcassets */; };
 		967FD68B2A112EC40081BE81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD68A2A112EC40081BE81 /* Preview Assets.xcassets */; };
 		969A1F3A2A35181B004311CC /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A1F392A35181B004311CC /* Units.swift */; };
 		969A1F3C2A351B00004311CC /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A1F3B2A351B00004311CC /* Section.swift */; };
-		96EDABFA2A135C2700F614DC /* ConvertObjem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EDABF92A135C2700F614DC /* ConvertObjem.swift */; };
+		96CD96E02A36405000A5AE89 /* LinkViewDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD96DF2A36405000A5AE89 /* LinkViewDescription.swift */; };
+		96CD96E22A3643C000A5AE89 /* ConvertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD96E12A3643C000A5AE89 /* ConvertDetailView.swift */; };
+		96D732262A4B3AA100BE6C55 /* SplitBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D732252A4B3AA100BE6C55 /* SplitBill.swift */; };
 		96EDABFC2A13635200F614DC /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EDABFB2A13635200F614DC /* LinkView.swift */; };
-		96FA13C62A127AE4000BCC84 /* ConvertVzdialenostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FA13C52A127AE4000BCC84 /* ConvertVzdialenostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		96024BBF2A151E60009950AD /* ConvertTeplotaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertTeplotaView.swift; sourceTree = "<group>"; };
-		963224C62A14006400737D21 /* ConvertHmotnostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertHmotnostView.swift; sourceTree = "<group>"; };
 		967FD6802A112EC30081BE81 /* Kurz-Surovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kurz-Surovy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kurz_SurovyApp.swift; sourceTree = "<group>"; };
-		967FD6852A112EC30081BE81 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		967FD6852A112EC30081BE81 /* ConvertMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMenuView.swift; sourceTree = "<group>"; };
 		967FD6872A112EC40081BE81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		967FD68A2A112EC40081BE81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		969A1F392A35181B004311CC /* Units.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		969A1F3B2A351B00004311CC /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
-		96EDABF92A135C2700F614DC /* ConvertObjem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertObjem.swift; sourceTree = "<group>"; };
+		96CD96DF2A36405000A5AE89 /* LinkViewDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewDescription.swift; sourceTree = "<group>"; };
+		96CD96E12A3643C000A5AE89 /* ConvertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDetailView.swift; sourceTree = "<group>"; };
+		96D732252A4B3AA100BE6C55 /* SplitBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBill.swift; sourceTree = "<group>"; };
 		96EDABFB2A13635200F614DC /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
-		96FA13C52A127AE4000BCC84 /* ConvertVzdialenostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertVzdialenostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +63,12 @@
 		967FD6822A112EC30081BE81 /* Kurz-Surovy */ = {
 			isa = PBXGroup;
 			children = (
-				963224C62A14006400737D21 /* ConvertHmotnostView.swift */,
-				96EDABF92A135C2700F614DC /* ConvertObjem.swift */,
 				96EDABFB2A13635200F614DC /* LinkView.swift */,
 				967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */,
-				967FD6852A112EC30081BE81 /* ContentView.swift */,
-				96024BBF2A151E60009950AD /* ConvertTeplotaView.swift */,
-				96FA13C52A127AE4000BCC84 /* ConvertVzdialenostView.swift */,
+				967FD6852A112EC30081BE81 /* ConvertMenuView.swift */,
+				96D732252A4B3AA100BE6C55 /* SplitBill.swift */,
+				96CD96E12A3643C000A5AE89 /* ConvertDetailView.swift */,
+				96CD96DF2A36405000A5AE89 /* LinkViewDescription.swift */,
 				969A1F392A35181B004311CC /* Units.swift */,
 				969A1F3B2A351B00004311CC /* Section.swift */,
 				967FD6872A112EC40081BE81 /* Assets.xcassets */,
@@ -159,13 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				969A1F3C2A351B00004311CC /* Section.swift in Sources */,
-				967FD6862A112EC30081BE81 /* ContentView.swift in Sources */,
-				96FA13C62A127AE4000BCC84 /* ConvertVzdialenostView.swift in Sources */,
-				963224C72A14006400737D21 /* ConvertHmotnostView.swift in Sources */,
+				96D732262A4B3AA100BE6C55 /* SplitBill.swift in Sources */,
+				967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */,
 				967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */,
 				969A1F3A2A35181B004311CC /* Units.swift in Sources */,
-				96EDABFA2A135C2700F614DC /* ConvertObjem.swift in Sources */,
-				96024BC02A151E60009950AD /* ConvertTeplotaView.swift in Sources */,
+				96CD96E22A3643C000A5AE89 /* ConvertDetailView.swift in Sources */,
+				96CD96E02A36405000A5AE89 /* LinkViewDescription.swift in Sources */,
 				96EDABFC2A13635200F614DC /* LinkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,7 @@ struct Units {
               ratios.indices.contains(fromIndex),
               ratios.indices.contains(toIndex) else { return "" }
         let basicValue = value * ratios[fromIndex]
-        let toValue = value / ratios[toIndex]
+        let toValue = basicValue / ratios[toIndex]
         return "\(toValue) \(toUnit)"
     }
     
