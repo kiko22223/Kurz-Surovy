@@ -7,10 +7,10 @@
 import SwiftUI
 
 struct SplitBillView: View {
-    var body: some View {
-        @State var amountOfPeople = 1.0
-        @State var amountToPay = 0.0
+    @State var amountOfPeople = 1.0
+    @State var amountToPay = 0.0
 
+    var body: some View {
         Form(content: {
             SwiftUI.Section("Enter amount to pay"){
                 Text("Enter amount of bill")
@@ -28,7 +28,6 @@ struct SplitBillView: View {
                     .font(.largeTitle)
             }
         })
-
     }
 }
 
