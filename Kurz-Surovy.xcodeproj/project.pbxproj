@@ -10,6 +10,8 @@
 		3737B4392A362DC700C18445 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B4362A362DC700C18445 /* Section.swift */; };
 		3737B43A2A362DC700C18445 /* LinkViewDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B4372A362DC700C18445 /* LinkViewDescription.swift */; };
 		3737B43B2A362DC700C18445 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B4382A362DC700C18445 /* Units.swift */; };
+		37E24CDA2A4CAB8000C57487 /* ConvertDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E24CD92A4CAB8000C57487 /* ConvertDetailViewModel.swift */; };
+		37E24CDC2A4CAF0900C57487 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E24CDB2A4CAF0900C57487 /* Constants.swift */; };
 		967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */; };
 		967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ConvertMenuView.swift */; };
 		967FD6882A112EC40081BE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD6872A112EC40081BE81 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 		3737B4362A362DC700C18445 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		3737B4372A362DC700C18445 /* LinkViewDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkViewDescription.swift; sourceTree = "<group>"; };
 		3737B4382A362DC700C18445 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
+		37E24CD92A4CAB8000C57487 /* ConvertDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDetailViewModel.swift; sourceTree = "<group>"; };
+		37E24CDB2A4CAF0900C57487 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		967FD6802A112EC30081BE81 /* Kurz-Surovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kurz-Surovy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kurz_SurovyApp.swift; sourceTree = "<group>"; };
 		967FD6852A112EC30081BE81 /* ConvertMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMenuView.swift; sourceTree = "<group>"; };
@@ -71,11 +75,13 @@
 		967FD6822A112EC30081BE81 /* Kurz-Surovy */ = {
 			isa = PBXGroup;
 			children = (
-				3737B4352A362D7B00C18445 /* Models */,
-				96EDABFB2A13635200F614DC /* LinkView.swift */,
 				967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */,
+				3737B4352A362D7B00C18445 /* Models */,
+				37E24CDB2A4CAF0900C57487 /* Constants.swift */,
+				96EDABFB2A13635200F614DC /* LinkView.swift */,
 				967FD6852A112EC30081BE81 /* ConvertMenuView.swift */,
 				96FA13C52A127AE4000BCC84 /* ConvertDetailView.swift */,
+				37E24CD92A4CAB8000C57487 /* ConvertDetailViewModel.swift */,
 				967FD6872A112EC40081BE81 /* Assets.xcassets */,
 				967FD6892A112EC40081BE81 /* Preview Content */,
 			);
@@ -167,6 +173,8 @@
 				3737B4392A362DC700C18445 /* Section.swift in Sources */,
 				3737B43A2A362DC700C18445 /* LinkViewDescription.swift in Sources */,
 				96EDABFC2A13635200F614DC /* LinkView.swift in Sources */,
+				37E24CDA2A4CAB8000C57487 /* ConvertDetailViewModel.swift in Sources */,
+				37E24CDC2A4CAF0900C57487 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

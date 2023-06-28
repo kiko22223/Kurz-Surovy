@@ -16,8 +16,8 @@ struct ConvertMenuView: View {
             ScrollView{
                 ForEach(Array(cells.enumerated()), id: \.offset) { _, cell in
                     NavigationLink {
-                        ConvertDetailView(units: cell.units,
-                                          title: cell.title)
+                        ConvertDetailView(viewModel: ConvertDetailViewModel(units: cell.units,
+                                                                            title: cell.title))
                     } label: {
                         LinkView(topColor: cell.topColor,
                                  bottomColor: cell.bottomColor,
