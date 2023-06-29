@@ -11,15 +11,14 @@ struct ConvertDetailView: View {
     let units: Units
     let title: String
 
-    @State private var zadanaHodnota: Double = 1 {
-        didSet {
-            UserDefaults.standard.set(zadanaHodnota, forKey: title +  Constants.lastUsedValueKey)
-        }
-    }
-    @State private var vstupnaJednotka: String = "janko mrkvicka" {
-        didSet{
-            UserDefaults.standard.set(vstupnaJednotka, forKey: title + Constants.lastUsedUnitKey)
-        }
+    @AppStorage private var zadanaHodnota: Double
+    @AppStorage private var vstupnaJednotka: String
+
+    init(units: Units, title: String, zadanaHodnota: Double, vstupnaJednotka: String) {
+        self._zadanaHodnota = AppStorage(wrappedValue: zadanaHodnota, title + Constants.lastUsedValueKey)
+        self._vstupnaJednotka = AppStorage(wrappedValue: vstupnaJednotka, title + Constants.lastUsedUnitKey)
+        self.units = units
+        self.title = title
     }
 
     var body: some View {
@@ -47,18 +46,6 @@ struct ConvertDetailView: View {
             }
         })
         .navigationTitle(title)
-        .task {
-            if let lastUsedUnit = UserDefaults.standard.string(forKey: title + Constants.lastUsedUnitKey){
-                vstupnaJednotka = lastUsedUnit
-            } else {
-                let index = units.ratios.firstIndex(of: 1) ?? 0
-                vstupnaJednotka = units.units[index]
-            }
-            zadanaHodnota = UserDefaults.standard.value(forKey: title + Constants.lastUsedValueKey) as? Double ?? 1
-            
-        }
-
-
     }
 }
 //struct ConvertDetailView_Preview: PreviewProvider {
