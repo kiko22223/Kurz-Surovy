@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		967B1E582A4DE2CF00CFE6E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B1E572A4DE2CF00CFE6E8 /* Constants.swift */; };
 		967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */; };
 		967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ConvertMenuView.swift */; };
 		967FD6882A112EC40081BE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD6872A112EC40081BE81 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		967B1E572A4DE2CF00CFE6E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		967FD6802A112EC30081BE81 /* Kurz-Surovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kurz-Surovy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kurz_SurovyApp.swift; sourceTree = "<group>"; };
 		967FD6852A112EC30081BE81 /* ConvertMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMenuView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				37E24CD52A4B408D00C57487 /* Models */,
 				967FD6852A112EC30081BE81 /* ConvertMenuView.swift */,
 				96CD96E12A3643C000A5AE89 /* ConvertDetailView.swift */,
+				967B1E572A4DE2CF00CFE6E8 /* Constants.swift */,
 			);
 			path = Convertor;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				96CD96E22A3643C000A5AE89 /* ConvertDetailView.swift in Sources */,
 				96CD96E02A36405000A5AE89 /* LinkViewDescription.swift in Sources */,
 				96EDABFC2A13635200F614DC /* LinkView.swift in Sources */,
+				967B1E582A4DE2CF00CFE6E8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

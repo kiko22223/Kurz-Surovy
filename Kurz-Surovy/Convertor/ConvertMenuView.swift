@@ -49,8 +49,7 @@ struct ConvertMenuView: View {
                 ForEach(Array(cells.enumerated()), id: \.offset) { _, cell in
                     NavigationLink {
                         ConvertDetailView(units: cell.units,
-                                          title: cell.title,
-                                          vstupnaJednotka: cell.units.units[0])
+                                          title: cell.title)
                     } label: {
                         LinkView(topColor: cell.topColor,
                                  bottomColor: cell.bottomColor,
