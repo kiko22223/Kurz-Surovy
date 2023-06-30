@@ -1,19 +1,6 @@
 import SwiftUI
 struct ConvertMenuView: View {
 
-    func loadUnit(title: String, units: Units) -> String {
-        if let lastUsedUnit = UserDefaults.standard.string(forKey: title + Constants.lastUsedValueKey) {
-            return lastUsedUnit
-        } else {
-            let index = units.ratios.firstIndex(of: 1) ?? 0
-            return units.units[index]
-        }
-    }
-
-    func loadValue(title: String, units: Units) -> Double {
-        UserDefaults.standard.value(forKey:title + Constants.lastUsedUnitKey) as? Double ?? 1
-    }
-
 //    let tuple: (element: LinkViewDescription, offset: Int) = (LinkViewDescription(title: "Lenght",
 //                                                                                  imageName: "imageKM",
 //                                                                                  topColor: .blue, bottomColor: .cyan,
@@ -61,9 +48,7 @@ struct ConvertMenuView: View {
             ScrollView{
                 ForEach(Array(cells.enumerated()), id: \.offset) { _, cell in
                     NavigationLink {
-                        ConvertDetailView(units: cell.units, title: cell.title,
-                                          zadanaHodnota: loadValue(title: cell.title, units: cell.units),
-                                          vstupnaJednotka: loadUnit(title: cell.title, units: cell.units))
+                        ConvertDetailView(units: cell.units, title: cell.title)
                     } label: {
                         LinkView(topColor: cell.topColor,
                                  bottomColor: cell.bottomColor,

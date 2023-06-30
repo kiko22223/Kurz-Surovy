@@ -14,9 +14,23 @@ struct ConvertDetailView: View {
     @AppStorage private var zadanaHodnota: Double
     @AppStorage private var vstupnaJednotka: String
 
-    init(units: Units, title: String, zadanaHodnota: Double, vstupnaJednotka: String) {
-        self._zadanaHodnota = AppStorage(wrappedValue: zadanaHodnota, title + Constants.lastUsedValueKey)
-        self._vstupnaJednotka = AppStorage(wrappedValue: vstupnaJednotka, title + Constants.lastUsedUnitKey)
+    init(units: Units, title: String) {
+        func loadUnit(title: String, units: Units) -> String {
+            if let lastUsedUnit = UserDefaults.standard.string(forKey: title + Constants.lastUsedValueKey) {
+                return lastUsedUnit
+            } else {
+                let index = units.ratios.firstIndex(of: 1) ?? 0
+                return units.units[index]
+            }
+        }
+
+        func loadValue(title: String) -> Double {
+            UserDefaults.standard.value(forKey: title + Constants.lastUsedUnitKey) as? Double ?? 1
+        }
+        self._zadanaHodnota = AppStorage(wrappedValue: loadValue(title: title),
+                                         title + Constants.lastUsedValueKey)
+        self._vstupnaJednotka = AppStorage(wrappedValue: loadUnit(title: title, units: units),
+                                           title + Constants.lastUsedUnitKey)
         self.units = units
         self.title = title
     }
