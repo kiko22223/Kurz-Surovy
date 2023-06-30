@@ -11,7 +11,9 @@ import SwiftUI
 struct Kurz_SurovyApp: App {
     var body: some Scene {
         WindowGroup {
-            ConvertMenuView()
+            NavigationView {
+                ContentView()
+            }.navigationViewStyle(.stack)
         }
     }
 }

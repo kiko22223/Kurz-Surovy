@@ -44,7 +44,7 @@ struct ConvertMenuView: View {
                                          ratios: [1, 1, 0.001, 1000, 10e6, 10e9, 10e12]))]
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ScrollView{
                 ForEach(Array(cells.enumerated()), id: \.offset) { _, cell in
                     NavigationLink {
@@ -57,12 +57,12 @@ struct ConvertMenuView: View {
                     }.navigationTitle("Konvertor")
                 }
             }
-        }
-        .navigationViewStyle(.stack)
+//        }
+//        .navigationViewStyle(.stack)
         
     }
 }
-struct ContentView_Previews: PreviewProvider {
+struct ConvertMenuView_Previews: PreviewProvider {
     static var previews: some View {
         ConvertMenuView()
     }
