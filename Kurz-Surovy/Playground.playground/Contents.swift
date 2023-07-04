@@ -5,7 +5,7 @@ let days : [(name:String, order: Int)] = [("utorok", 1),("streda",2),("pondelok"
 let sortedDays = days.sorted(by: { $0.order < $1.order })
 
 for day in sortedDays {
-    print("\(day.name.localizedCapitalized) je \(day.order + 1) den v tyzdni")
+    print("\(day.name.localizedCapitalized) je \(day.order + 1). den v tyzdni")
 }
 
 let dayNames = sortedDays.map{$0.name}

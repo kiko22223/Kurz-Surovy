@@ -12,7 +12,8 @@ struct LinkView: View {
     let topColor : Color
     let bottomColor: Color
     let headerTitle: String
-    let titleImage: String
+    var titleImage: String? = nil
+    var systemImageName: String? = nil
     
     var body: some View {
         ZStack{
@@ -33,12 +34,20 @@ struct LinkView: View {
                 }
                 
                 Spacer()
-                Image(titleImage)
-                    .resizable()
-                    .frame(width: 60, height: 60)
-                    .opacity(0.7)
-                    .offset(x:100, y: 0)
-                
+                if let systemImageName {
+                    Image(systemName: systemImageName)
+                        .resizable()
+                        .frame(width: 60, height: 60)
+                        .opacity(0.7)
+                        .offset(x:100, y: 0)
+                        .tint(.white)
+                } else if let titleImage {
+                    Image(titleImage)
+                        .resizable()
+                        .frame(width: 60, height: 60)
+                        .opacity(0.7)
+                        .offset(x:100, y: 0)
+                }
             }
         }
         .frame(height: 150)

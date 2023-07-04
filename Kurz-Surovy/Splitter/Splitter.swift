@@ -20,12 +20,12 @@ struct Splitter: View {
                     
                     
                 } label: {
-                    LinkView(topColor: .red, bottomColor: .blue, headerTitle: "Convertor" , titleImage: "clock.arrow.circlepath")
+                    LinkView(topColor: .red, bottomColor: .blue, headerTitle: "Convertor", systemImageName: "clock.arrow.circlepath")
                 }
                 NavigationLink {
                     SplitBillView()
                 } label: {
-                    LinkView(topColor: .yellow, bottomColor: .purple, headerTitle: "SplitBill" , titleImage: "person.2.fill")
+                    LinkView(topColor: .yellow, bottomColor: .purple, headerTitle: "SplitBill" , systemImageName: "person.2.fill")
                 }
                 .navigationTitle("Way to all apps")
             }
