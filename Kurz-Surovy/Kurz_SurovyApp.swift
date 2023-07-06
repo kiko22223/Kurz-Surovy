@@ -11,7 +11,7 @@ import SwiftUI
 struct Kurz_SurovyApp: App {
     var body: some Scene {
         WindowGroup {
-            Splitter()
+            SplitterView()
         }
     }
 }

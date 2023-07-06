@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96101DA22A53446800CBC098 /* Splitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96101DA12A53446800CBC098 /* Splitter.swift */; };
+		96101DA22A53446800CBC098 /* SplitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96101DA12A53446800CBC098 /* SplitterView.swift */; };
 		96101DA52A5345A500CBC098 /* SplitterCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96101DA42A5345A500CBC098 /* SplitterCells.swift */; };
 		967B1E582A4DE2CF00CFE6E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B1E572A4DE2CF00CFE6E8 /* Constants.swift */; };
 		967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		96101DA12A53446800CBC098 /* Splitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splitter.swift; sourceTree = "<group>"; };
+		96101DA12A53446800CBC098 /* SplitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitterView.swift; sourceTree = "<group>"; };
 		96101DA42A5345A500CBC098 /* SplitterCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitterCells.swift; sourceTree = "<group>"; };
 		967B1E572A4DE2CF00CFE6E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		967FD6802A112EC30081BE81 /* Kurz-Surovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kurz-Surovy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				96101DA42A5345A500CBC098 /* SplitterCells.swift */,
-				96101DA12A53446800CBC098 /* Splitter.swift */,
+				96101DA12A53446800CBC098 /* SplitterView.swift */,
 			);
 			path = Splitter;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 				967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */,
 				96101DA52A5345A500CBC098 /* SplitterCells.swift in Sources */,
 				967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */,
-				96101DA22A53446800CBC098 /* Splitter.swift in Sources */,
+				96101DA22A53446800CBC098 /* SplitterView.swift in Sources */,
 				969A1F3A2A35181B004311CC /* Units.swift in Sources */,
 				96CD96E22A3643C000A5AE89 /* ConvertDetailView.swift in Sources */,
 				96CD96E02A36405000A5AE89 /* LinkViewDescription.swift in Sources */,

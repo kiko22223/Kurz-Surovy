@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Splitter: View {
+struct SplitterView: View {
     
     let spliiterIntro: [SplitterCells] = [SplitterCells(name: "Convertor", color: Color.red), SplitterCells(name: "SplitBill", color: .black)]
     
@@ -37,19 +37,8 @@ struct Splitter: View {
 
 struct Splitter_Previews: PreviewProvider {
     static var previews: some View {
-        Splitter()
+        SplitterView()
     }
 }
 
-//            Form{
-//
-//                NavigationLink("ConvertMenuView"){
-//                    ConvertMenuView()
-//                }
-//                NavigationLink("SplitBillView"){
-//                    SplitBillView()
-//                }
-//
-//            }
-//            navigationTitle("All your apps")
 // Ako nastavit aby tam nebol odsek ? Ako by som dokazal spravit model ktory by si tahal aj destination aj data o vizualnom dizajne z modelu ? 

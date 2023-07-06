@@ -37,7 +37,7 @@ struct LinkView: View {
                 if let systemImageName {
                     Image(systemName: systemImageName)
                         .resizable()
-                        .frame(width: 60, height: 60)
+                        .frame(width: 60, height: 50)
                         .opacity(0.7)
                         .offset(x:100, y: 0)
                         .tint(.white)

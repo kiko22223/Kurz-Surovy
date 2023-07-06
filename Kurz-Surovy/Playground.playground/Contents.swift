@@ -1,13 +1,47 @@
 import UIKit
 
-let days : [(name:String, order: Int)] = [("utorok", 1),("streda",2),("pondelok", 0),("piatok",4),("nedela",6),("sobota",5),("stvrtok", 3)]
+var arrayInt : [Int] = []
+var duplicates : [Int : Int] = [:]
+var x = 0
 
-let sortedDays = days.sorted(by: { $0.order < $1.order })
+//for x in 0..<100 {
+//    arrayInt.append(Int.random(in: 1...10))
+//}
 
-for day in sortedDays {
-    print("\(day.name.localizedCapitalized) je \(day.order + 1). den v tyzdni")
+while x <= 100 {
+    arrayInt.append(Int.random(in: 1...10))
+    x = x + 1
 }
 
-let dayNames = sortedDays.map{$0.name}
+func porovnaniePocetnosti(left: Int, right: Int) -> Bool {
+    return duplicates[left]! > duplicates[right]!
+}
 
-print(dayNames)
+for i in arrayInt {
+    duplicates[i] = (duplicates[i] ?? 0) + 1
+}
+print(duplicates)
+
+var numbers = duplicates.keys.sorted(by: { left, right in
+    return duplicates[left]! > duplicates[right]!
+})
+
+let numbers2 = duplicates.keys.sorted(by: porovnaniePocetnosti)
+
+print(numbers)
+
+print(numbers2)
+
+var tuples : [(Int, Int)] = []
+
+//for (key,value) in duplicates {
+//    tuples.append((key,value))
+//}
+
+for tuple in duplicates {
+    tuples.append(tuple)
+}
+
+print(tuples)
+
+// left < right
