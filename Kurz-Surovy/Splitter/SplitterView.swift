@@ -9,11 +9,9 @@ import SwiftUI
 
 struct SplitterView: View {
     
-    let spliiterIntro: [SplitterCells] = [SplitterCells(name: "Convertor", color: Color.red), SplitterCells(name: "SplitBill", color: .black)]
-    
     var body: some View {
-        NavigationView {
-            //            ForEach(Array(spliiterIntro.enumerated()), id: \.offset) { _, cell in
+       
+            
             ScrollView{
                 NavigationLink {
                     ConvertMenuView()
@@ -30,15 +28,12 @@ struct SplitterView: View {
                 .navigationTitle("Way to all apps")
             }
         }
-        }
+       
         
     }
-//}
 
 struct Splitter_Previews: PreviewProvider {
     static var previews: some View {
         SplitterView()
     }
 }
-
-// Ako nastavit aby tam nebol odsek ? Ako by som dokazal spravit model ktory by si tahal aj destination aj data o vizualnom dizajne z modelu ? 

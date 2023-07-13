@@ -1,6 +1,8 @@
 import SwiftUI
 struct ConvertMenuView: View {
     
+    
+    
     let cells : [LinkViewDescription] = [
         LinkViewDescription(title: "Lenght",
                             imageName: "imageKM",
@@ -35,11 +37,13 @@ struct ConvertMenuView: View {
                                          ratios: [1, 1, 0.001, 1000, 10e6, 10e9, 10e12]))]
     
     var body: some View {
-        NavigationView {
+        
             ScrollView{
+                
                 ForEach(Array(cells.enumerated()), id: \.offset) { _, cell in
                     NavigationLink {
                         ConvertDetailView(units: cell.units, title: cell.title)
+                        
                     } label: {
                         LinkView(topColor: cell.topColor,
                                  bottomColor: cell.bottomColor,
@@ -48,8 +52,8 @@ struct ConvertMenuView: View {
                     }.navigationTitle("Konvertor")
                 }
             }
-        }
-        .navigationViewStyle(.stack)
+        
+        
         
     }
 }

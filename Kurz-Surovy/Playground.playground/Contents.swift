@@ -1,47 +1,42 @@
-import UIKit
-
-var arrayInt : [Int] = []
-var duplicates : [Int : Int] = [:]
-var x = 0
-
-//for x in 0..<100 {
-//    arrayInt.append(Int.random(in: 1...10))
-//}
-
-while x <= 100 {
-    arrayInt.append(Int.random(in: 1...10))
-    x = x + 1
+var arrayOfNumbers: [Int] = []
+for i in 1...101 {
+    arrayOfNumbers.append(Int.random(in: 0...100))
 }
 
-func porovnaniePocetnosti(left: Int, right: Int) -> Bool {
-    return duplicates[left]! > duplicates[right]!
+func findEvenAndNotEvent (array: [Int]) {
+
+    var even = 0.0
+    var notEven = 0.0
+    var sum = 0.0
+    var count = 0.0
+    var oddSum = 0.0
+    var evenSum = 0.0
+    
+    
+    for number in array {
+        count += 1
+        if number == 0 {
+            continue
+        }
+        
+        if number % 2 == 0 {
+            even += 1
+            evenSum += Double(number)
+        } else {
+            notEven += 1
+            oddSum += Double(number)
+        }
+        sum += Double(number)
+    }
+    let average = String(format:"%.2f",Double(sum) / Double(count))
+    let averageOdd = String(format: "%.2f",Double(oddSum) / Double(notEven))
+    let averageEven = String(format: "%.2f", Double(evenSum) / Double(even))
+    
+    print(sum)
+    print(count)
+    print("Number of even numbers is \(even), number of odd numbers is \(notEven), average is \(average), \naverage of odd numbers is \(averageOdd), average of even numbers is \(averageEven)")
 }
 
-for i in arrayInt {
-    duplicates[i] = (duplicates[i] ?? 0) + 1
-}
-print(duplicates)
+findEvenAndNotEvent(array: arrayOfNumbers)
 
-var numbers = duplicates.keys.sorted(by: { left, right in
-    return duplicates[left]! > duplicates[right]!
-})
-
-let numbers2 = duplicates.keys.sorted(by: porovnaniePocetnosti)
-
-print(numbers)
-
-print(numbers2)
-
-var tuples : [(Int, Int)] = []
-
-//for (key,value) in duplicates {
-//    tuples.append((key,value))
-//}
-
-for tuple in duplicates {
-    tuples.append(tuple)
-}
-
-print(tuples)
-
-// left < right
+//convertor pocitadlo otvoreni jednotlivych detailov jednotiek, zobrazit niekde v detaile resp v danom view cislo otvoreni

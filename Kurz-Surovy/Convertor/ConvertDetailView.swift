@@ -13,6 +13,10 @@ struct ConvertDetailView: View {
 
     @AppStorage private var zadanaHodnota: Double
     @AppStorage private var vstupnaJednotka: String
+    @AppStorage private var numberOfClics: Int
+    @Environment(\.presentationMode) var presentation
+    
+
 
     init(units: Units, title: String) {
         func loadUnit(title: String, units: Units) -> String {
@@ -27,16 +31,27 @@ struct ConvertDetailView: View {
         func loadValue(title: String) -> Double {
             UserDefaults.standard.value(forKey: title + Constants.lastUsedUnitKey) as? Double ?? 1
         }
+        func loadNumberOfClics(title: String) -> Int {
+            UserDefaults.standard.integer(forKey: title + Constants.numberOfClicsKey)
+        }
         self._zadanaHodnota = AppStorage(wrappedValue: loadValue(title: title),
                                          title + Constants.lastUsedValueKey)
         self._vstupnaJednotka = AppStorage(wrappedValue: loadUnit(title: title, units: units),
                                            title + Constants.lastUsedUnitKey)
+        self._numberOfClics = AppStorage(wrappedValue: loadNumberOfClics(title: title),
+                                         title + Constants.numberOfClicsKey)
         self.units = units
         self.title = title
+        
     }
 
     var body: some View {
         Form(content: {
+            Text("Number of opens: \(numberOfClics)")
+            Button("Delete all views") {
+                numberOfClics = 0
+                self.presentation.wrappedValue.dismiss()
+            }
             SwiftUI.Section(units.sections[0].title) {
                 TextField("Zadaj hodnotu", value: $zadanaHodnota , format: .number )
                     .keyboardType(.decimalPad)
@@ -60,6 +75,9 @@ struct ConvertDetailView: View {
             }
         })
         .navigationTitle(title)
+        .onAppear{
+            self.numberOfClics = numberOfClics + 1
+        }
     }
 }
 //struct ConvertDetailView_Preview: PreviewProvider {
