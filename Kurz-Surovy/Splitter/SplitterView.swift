@@ -26,7 +26,7 @@ struct SplitterView: View {
                     LinkView(topColor: .yellow, bottomColor: .purple, headerTitle: "SplitBill" , systemImageName: "person.2.fill")
                 }
                 NavigationLink {
-                    SplitBillView()
+                    Encode()
                 } label: {
                     LinkView(topColor: .green, bottomColor: .yellow, headerTitle: "Encode" , systemImageName: "wallet.pass")
                 }

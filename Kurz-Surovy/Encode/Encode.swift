@@ -45,13 +45,13 @@ struct Encode: View {
         Form(content: {
             SwiftUI.Section("Enter your message you want to hide") {
                 TextField("Enter message", text: $hiddenMessage)
-            }
+            }.disableAutocorrection(true)
+                .keyboardType(.alphabet)
             SwiftUI.Section("Your coded message in numbers"){
                 Text(String("\(codeString(word:hiddenMessage))")) //Ako dokazem aby som mal na vystupe cisty Int ? Resp ako potom zadat hodnoty na vstup pri decode ?
                 Button(buttonTitle) {
 //                    clipboard.string = (String("\(codeString(word:hiddenMessage))"))
                     clipboard.string = (String("\(codeString(word:hiddenMessage))"))
-                    print(clipboard)
                     buttonTitle = "Copied!"
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                      buttonTitle = "Copy To clipboard"
