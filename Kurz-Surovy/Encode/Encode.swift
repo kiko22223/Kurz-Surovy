@@ -35,7 +35,6 @@ struct Encode: View {
         let word = word.lowercased()
         for letter in word {
             arrayOfIndexes.append(dictionary[letter] ?? 0)
-            buttonTitle = "Copy To clipboard"
         }
     return arrayOfIndexes
     }
@@ -48,7 +47,7 @@ struct Encode: View {
             }.disableAutocorrection(true)
                 .keyboardType(.alphabet)
             SwiftUI.Section("Your coded message in numbers"){
-                Text(String("\(codeString(word:hiddenMessage))")) //Ako dokazem aby som mal na vystupe cisty Int ? Resp ako potom zadat hodnoty na vstup pri decode ?
+                Text(String("\(codeString(word:hiddenMessage).map{String($0)}.joined(separator: " "))"))
                 Button(buttonTitle) {
 //                    clipboard.string = (String("\(codeString(word:hiddenMessage))"))
                     clipboard.string = (String("\(codeString(word:hiddenMessage))"))
