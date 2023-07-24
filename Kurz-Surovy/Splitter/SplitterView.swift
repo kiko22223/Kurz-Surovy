@@ -25,6 +25,16 @@ struct SplitterView: View {
                 } label: {
                     LinkView(topColor: .yellow, bottomColor: .purple, headerTitle: "SplitBill" , systemImageName: "person.2.fill")
                 }
+                NavigationLink {
+                    SplitBillView()
+                } label: {
+                    LinkView(topColor: .green, bottomColor: .yellow, headerTitle: "Encode" , systemImageName: "wallet.pass")
+                }
+                NavigationLink {
+                    SplitBillView()
+                } label: {
+                    LinkView(topColor: .yellow, bottomColor: .green, headerTitle: "Decode" , systemImageName: "wallet.pass.fill")
+                }
                 .navigationTitle("Way to all apps")
             }
         }
