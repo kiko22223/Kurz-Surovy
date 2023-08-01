@@ -8,7 +8,8 @@
 //import SwiftUI
 //
 //struct Decode: View {
-//    @State var numbersMessage = [Int]()
+//    @State private var numbersMessage : String = ""
+//
 //    
 //    func createIntCharDictionary() -> [Int : Character] {
 //        let alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -32,19 +33,26 @@
 //            } else {
 //                arrayOfChar.append(dictionary[number]!)
 //            }
-//            //        arrayOfChar.append(number == 0 ? " " : dictionary[number] ?? " ") oneliner kodu vyssie
 //        }
 //        return String(arrayOfChar)
+//        
 //    }
+//    
 //    
 //    
 //    var body: some View {
 //        Form(content: {
 //            SwiftUI.Section("Enter your message you want to hide") {
-//                TextField("Enter message", value: $numbersMessage) // ako sem pridam formatter a naco sluzi ?
+//                TextField("Enter your message to decode", text: $numbersMessage)
 //            }
-//            SwiftUI.Section("Your coded message in numbers"){
-//                Text(decodeString(code:numbersMessage))
+//            var numbers = numbersMessage.split(separator: " ")
+//            var result = [Int]()
+//            for number in numbers {
+//                result += decodeString(code: number)
+//            }
+//
+//            SwiftUI.Section("Your decoded message"){
+//                Text(decodeString(code:))
 //            }
 //        })
 //    }

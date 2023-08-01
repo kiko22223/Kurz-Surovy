@@ -18,7 +18,7 @@ struct Encode: View {
     @State var buttonTitle = "Copy to clipborad"
 
     func alphabetInDictionary() -> [Character: Int] {
-        let alphabet = "abcdefghijklmnopqrstuvwxyz"
+        let alphabet = "abcdefghijklmnopqrstuvwxyz1234567890?!"
         var alphabetDict = [Character: Int]()
         
         for (index, char) in alphabet.enumerated() {
@@ -49,8 +49,7 @@ struct Encode: View {
             SwiftUI.Section("Your coded message in numbers"){
                 Text(String("\(codeString(word:hiddenMessage).map{String($0)}.joined(separator: " "))"))
                 Button(buttonTitle) {
-//                    clipboard.string = (String("\(codeString(word:hiddenMessage))"))
-                    clipboard.string = (String("\(codeString(word:hiddenMessage))"))
+                    clipboard.string = (String("\(codeString(word:hiddenMessage).map{String($0)}.joined(separator: " "))"))
                     buttonTitle = "Copied!"
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                      buttonTitle = "Copy To clipboard"
