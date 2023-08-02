@@ -45,9 +45,8 @@ struct Encode: View {
         Form(content: {
             SwiftUI.Section("Enter your message you want to hide") {
                 TextField("Enter message", text: $hiddenMessage).disableAutocorrection(true)
-                    .keyboardType(.alphabet)
-                
-                TextField("Select your code level", text: $codeLevel, format: .number).keyboardType(.decimalPad)
+                        .keyboardType(.alphabet)
+                TextField("Select your code level", value: $codeLevel, format: .number).keyboardType(.decimalPad)
             }
                 SwiftUI.Section("Your coded message in numbers"){
                 Text(String("\(codeString(word:hiddenMessage).map{String($0)}.joined(separator: " "))"))
