@@ -8,9 +8,9 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct Decode: View {
+struct DecodeView: View {
     @State private var numbersMessage : String = ""
-    let decodeFuncs = DecodeFuncs()
+    let decodeFuncs = Decode()
     @State var copied = false
     let clipboard = UIPasteboard.general
     
@@ -21,12 +21,12 @@ struct Decode: View {
             }
 
             SwiftUI.Section("Your decoded message"){
-                Text(decodeFuncs.stringToArrayOfInts(input: numbersMessage))
+                Text(decodeFuncs.decodeInts(input: numbersMessage))
                 if copied {
                     Text("Copied!").foregroundColor(.red).bold().font(.title)
                 } else {
                     Button("Copy To clipboard") {
-                        clipboard.string = decodeFuncs.stringToArrayOfInts(input: numbersMessage)
+                        clipboard.string = decodeFuncs.decodeInts(input: numbersMessage)
                         copied = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             copied = false
@@ -40,6 +40,6 @@ struct Decode: View {
 
 struct Decode_Previews: PreviewProvider {
     static var previews: some View {
-        Decode()
+        DecodeView()
     }
 }

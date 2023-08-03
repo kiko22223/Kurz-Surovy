@@ -8,9 +8,9 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct Encode: View {
+struct EncodeView: View {
     
-let encodeFuncs = EncodeViewFuncs()
+let encodeFuncs = Encode()
   
     
     @State var hiddenMessage = ""
@@ -46,6 +46,6 @@ let encodeFuncs = EncodeViewFuncs()
 
 struct Encode_Previews: PreviewProvider {
     static var previews: some View {
-        Encode()
+        EncodeView()
     }
 }

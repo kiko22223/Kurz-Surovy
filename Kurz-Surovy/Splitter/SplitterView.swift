@@ -7,39 +7,33 @@
 
 import SwiftUI
 
+
+
 struct SplitterView: View {
+    
+    let views : [(view: AnyView, topColor: Color, bottomColor: Color, headerTitle: String, systemImageName: String)] = [
+        (view: AnyView(ConvertMenuView()), topColor: .red, bottomColor: .blue, headerTitle: "Convertor", systemImageName: "clock.arrow.circlepath"),
+        (view: AnyView(SplitBillView()), topColor: .green, bottomColor: .yellow, headerTitle: "SplitBill" , systemImageName: "wallet.pass"),
+        (view: AnyView(EncodeView()), topColor: .yellow, bottomColor: .purple, headerTitle: "Encode" , systemImageName: "person.2.fill"),
+        (view: AnyView(DecodeView()), topColor: .yellow, bottomColor: .green, headerTitle: "Decode" , systemImageName: "wallet.pass.fill")
+    ]
     
     var body: some View {
         
         
         ScrollView{
-            NavigationLink {
-                ConvertMenuView()
-            } label: {
-                
+            ForEach(views, id: \.headerTitle){ view in
+                NavigationLink {
+                    view.view
+                } label: {
+                    LinkView(topColor: view.topColor, bottomColor: view.bottomColor, headerTitle: view.headerTitle, systemImageName: view.systemImageName)
+                }
             }
-            NavigationLink {
-                SplitBillView()
-            } label: {
-                
-            }
-            NavigationLink {
-                Encode()
-            } label: {
-                
-            }
-            NavigationLink {
-                Decode()
-            } label: {
-                
-            }
+            
             .navigationTitle("Way to all apps")
         }
     }
-    LinkView(topColor: .red, bottomColor: .blue, headerTitle: "Convertor", systemImageName: "clock.arrow.circlepath")
-    LinkView(topColor: .green, bottomColor: .yellow, headerTitle: "Encode" , systemImageName: "wallet.pass")
-    LinkView(topColor: .yellow, bottomColor: .purple, headerTitle: "SplitBill" , systemImageName: "person.2.fill")
-    LinkView(topColor: .yellow, bottomColor: .green, headerTitle: "Decode" , systemImageName: "wallet.pass.fill")
+
 }
 
 struct Splitter_Previews: PreviewProvider {
