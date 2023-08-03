@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct DecodeFuncs {
+class DecodeFuncs: Code {
     func createIntCharDictionary() -> [Int : Character] {
-        let alphabet = "abcdefghijklmnopqrstuvwxyz1234567890?!"
         var alphabetDict = [Int : Character]()
         
         for (index, char) in alphabet.enumerated() {

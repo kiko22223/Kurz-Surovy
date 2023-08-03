@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct EncodeViewFuncs {
+class EncodeViewFuncs: Code {
     func alphabetInDictionary() -> [Character: Int] {
-        let alphabet = "abcdefghijklmnopqrstuvwxyz1234567890?!"
+        
         var alphabetDict = [Character: Int]()
         
         for (index, char) in alphabet.enumerated() {
