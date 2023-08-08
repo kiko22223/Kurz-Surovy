@@ -11,6 +11,8 @@ import UniformTypeIdentifiers
 struct EncodeView: View {
     
 let encodeFuncs = Encode()
+    @State private var numberOfTimes = 0
+    
   
     
     @State var hiddenMessage = ""
@@ -21,8 +23,13 @@ let encodeFuncs = Encode()
         Form(content: {
             SwiftUI.Section("Enter your message you want to hide") {
                 TextField("Enter message", text: $hiddenMessage)
-            }.disableAutocorrection(true)
-                .keyboardType(.alphabet)
+                    .disableAutocorrection(true)
+                Picker("How many times is message encoded", selection: $numberOfTimes) {
+                    ForEach(0...Code().count, id: \.self){ number in
+                        Text(String(number))
+                    }
+                }.pickerStyle(.menu)
+            }
             SwiftUI.Section("Your coded message in numbers"){
                 Text(encodeFuncs.codeString(word: hiddenMessage))
                 if copied {

@@ -8,6 +8,9 @@
 import Foundation
 class Code {
     fileprivate let alphabet = "aáäbcčdďdzdžeéfghchiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž1234567890?!"
+    var count : Int {
+        return alphabet.count
+    }
 }
 
 class Encode: Code {
