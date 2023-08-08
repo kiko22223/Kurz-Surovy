@@ -136,17 +136,37 @@
 //
 //
 
+let alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+
+func moveAlphabet(with offset: Int) -> String {
+    let offset = offset > alphabet.count - 1 ? offset % alphabet.count : offset
+    if offset == 0 {
+        return alphabet
+    }
+    let tail = alphabet.suffix(offset)
+    return tail + String(alphabet.dropLast(offset))
+}
+
+for i in 0...10 {
+    print(i, moveAlphabet(with: i))
+}
+
+func movedIndex(position: Int, with offset: Int) -> Int {
+    let offset = offset > alphabet.count - 1 ? offset % alphabet.count : offset
+    let sum = position + offset
+    return sum < alphabet.count ? sum : sum % alphabet.count
+}
+
 func alphabetInDictionary(move: Int) -> [Character: Int] {
-    let alphabet = "abcdefghijklmnopqrstuvwxyz"
     var alphabetDict = [Character: Int]()
-    var index = alphabet.index(alphabet.startIndex, offsetBy: 1)
     
     for (index, char) in alphabet.enumerated() {
         let position = index + 1
         alphabetDict[char] = position
     }
-    var movedAlpha = alphabetDict.index(alphabetDict.startIndex, offsetBy: 1)
-    return movedAlpha
+
+    return alphabetDict
 }
 
 let dictionary = alphabetInDictionary(move: 15).sorted(by: <)
