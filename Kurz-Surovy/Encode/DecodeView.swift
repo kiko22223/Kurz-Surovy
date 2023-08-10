@@ -20,19 +20,19 @@ struct DecodeView: View {
             SwiftUI.Section("Enter your message you want to show") {
                 TextField("Enter your message to decode", text: $numbersMessage)
                 Picker("How many times is message decoded", selection: $numberOfTimes) {
-                    ForEach(0...Code().count, id: \.self){ number in
+                    ForEach(0...10, id: \.self){ number in
                         Text(String(number))
                     }
                 }.pickerStyle(.menu)
             }
 
             SwiftUI.Section("Your decoded message"){
-                Text(decodeFuncs.decodeInts(input: numbersMessage))
+                Text("\"\(decodeFuncs.decodeInts(input: numbersMessage, numberOfIterations: numberOfTimes))\"")
                 if copied {
                     Text("Copied!").foregroundColor(.red).bold().font(.title)
                 } else {
                     Button("Copy To clipboard") {
-                        clipboard.string = decodeFuncs.decodeInts(input: numbersMessage)
+                        clipboard.string = decodeFuncs.decodeInts(input: numbersMessage, numberOfIterations: numberOfTimes)
                         copied = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             copied = false

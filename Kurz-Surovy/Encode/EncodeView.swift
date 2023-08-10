@@ -15,6 +15,7 @@ let encodeFuncs = Encode()
     @State var messageToHide = ""
     let clipboard = UIPasteboard.general
     @State var copied = false
+    var hiddenMessage : String?
 
         var body: some View {
         Form(content: {
@@ -22,12 +23,13 @@ let encodeFuncs = Encode()
                 TextField("Enter message", text: $messageToHide)
                     .disableAutocorrection(true)
                 Picker("How many times is message encoded", selection: $numberOfTimes) {
-                    ForEach(0...Code().count, id: \.self){ number in
+                    ForEach(0...10, id: \.self){ number in
                         Text(String(number))
                     }
                 }.pickerStyle(.menu)
             }
             SwiftUI.Section("Your coded message in numbers"){
+                
                 Text(encodeFuncs.codeString(text: messageToHide, numberOfIterations: numberOfTimes))
                 if copied {
                     Text("Copied!").foregroundColor(.red).bold().font(.title)

@@ -55,7 +55,7 @@ class Encode: Code {
         if numberOfIterations == 0 {
             return text
         }
-        let dictionary = alphabetInDictionary(offset: numberOfIterations % 5)
+        let dictionary = alphabetInDictionary(offset: 0)
         var arrayOfIndexes = [Int]()
         let text = text.lowercased()
         for letter in text {
@@ -79,10 +79,14 @@ class Decode: Code {
         return alphabetDict
     }
     
-    public func decodeInts (input: String, offset: Int = 0) -> String {
+    public func decodeInts (input: String, numberOfIterations: Int) -> String {
+        
+        if numberOfIterations == 0 {
+            return input
+        }
         
         var arrayOfChar = [Character]()
-        let dictionary = createIntCharDictionary(offset: offset)
+        let dictionary = createIntCharDictionary(offset: 0)
         
         let stringParts = input.split(separator: " ")
         var result = [Int]()
@@ -99,7 +103,8 @@ class Decode: Code {
                 arrayOfChar.append(dictionary[number]!)
             }
         }
-        return String(arrayOfChar)
+        let decodedText = String(arrayOfChar)
+        return decodeInts(input: decodedText, numberOfIterations: numberOfIterations - 1)
         //        return stringParts.map({Int($0) ?? 0}) Skrateny zapis vyssie
         //        return stringParts.compactMap({Int($0)}) Skrateny zapis vyssie
     }
