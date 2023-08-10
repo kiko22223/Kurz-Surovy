@@ -12,12 +12,18 @@ struct DecodeView: View {
     @State private var numbersMessage : String = ""
     let decodeFuncs = Decode()
     @State var copied = false
+    @State private var numberOfTimes = 0
     let clipboard = UIPasteboard.general
     
     var body: some View {
         Form(content: {
-            SwiftUI.Section("Enter your message you want to hide") {
+            SwiftUI.Section("Enter your message you want to show") {
                 TextField("Enter your message to decode", text: $numbersMessage)
+                Picker("How many times is message decoded", selection: $numberOfTimes) {
+                    ForEach(0...Code().count, id: \.self){ number in
+                        Text(String(number))
+                    }
+                }.pickerStyle(.menu)
             }
 
             SwiftUI.Section("Your decoded message"){

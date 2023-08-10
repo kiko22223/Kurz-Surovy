@@ -11,14 +11,39 @@ class Code {
     var count : Int {
         return alphabet.count
     }
+    func moveAlphabet(with _offset: Int) -> String {
+        //    let offset = offset > alphabet.count - 1 ? offset % alphabet.count : offset
+        var offset = abs(_offset)
+        if _offset > alphabet.count - 1 {
+            offset = _offset % alphabet.count
+        } else {
+            offset = _offset
+        }
+        
+        if offset == 0 {
+            return alphabet
+        }
+        let tail = alphabet.suffix(offset)
+        return tail + String(alphabet.dropLast(offset))
+    }
+    
+    func movedIndex(position: Int, with offset: Int) -> Int {
+        let absOffset = abs(offset)
+        let offset = absOffset > alphabet.count - 1 ? absOffset % alphabet.count : absOffset
+        if offset == 0 {
+            return position
+        }
+        let sum = position + offset
+        return sum < alphabet.count ? sum : sum % alphabet.count
+    }
 }
 
 class Encode: Code {
-    private func alphabetInDictionary() -> [Character: Int] {
+    private func alphabetInDictionary(offset: Int) -> [Character: Int] {
         
         var alphabetDict = [Character: Int]()
         
-        for (index, char) in alphabet.enumerated() {
+        for (index, char) in moveAlphabet(with: offset).enumerated() {
             let position = index + 1
             alphabetDict[char] = position
         }
@@ -26,34 +51,38 @@ class Encode: Code {
         return alphabetDict
     }
     
-    public func codeString (word: String) -> String {
-        let dictionary = alphabetInDictionary()
+    public func codeString (text: String, numberOfIterations: Int) -> String {
+        if numberOfIterations == 0 {
+            return text
+        }
+        let dictionary = alphabetInDictionary(offset: numberOfIterations % 5)
         var arrayOfIndexes = [Int]()
-        let word = word.lowercased()
-        for letter in word {
+        let text = text.lowercased()
+        for letter in text {
             arrayOfIndexes.append(dictionary[letter] ?? 0)
         }
-        return String(arrayOfIndexes.map({String($0)}).joined(separator: " "))
+        let codedText = String(arrayOfIndexes.map({String($0)}).joined(separator: " "))
+        return codeString(text: codedText, numberOfIterations: numberOfIterations - 1)
     }
     
 }
 
 class Decode: Code {
-    private func createIntCharDictionary() -> [Int : Character] {
+    private func createIntCharDictionary(offset : Int) -> [Int : Character] {
         var alphabetDict = [Int : Character]()
         
         for (index, char) in alphabet.enumerated() {
-            let position = index + 1
+            let position = movedIndex(position: index + 1, with: offset)
             alphabetDict[position] = char
         }
         
         return alphabetDict
     }
     
-   public func decodeInts (input: String) -> String {
+    public func decodeInts (input: String, offset: Int = 0) -> String {
         
         var arrayOfChar = [Character]()
-        let dictionary = createIntCharDictionary()
+        let dictionary = createIntCharDictionary(offset: offset)
         
         let stringParts = input.split(separator: " ")
         var result = [Int]()

@@ -28,6 +28,8 @@
 //
 //print(clovek1.name,clovek2.name)
 //
+
+import Foundation
 //// slovnik ze pismenka od A do Z a priradit im cislo poradove
 //// napisat funkciu napisem vetu alebo slovo a vratit pocet jednotlivych pismen napr ananas = a:3 n:2 s:1
 //
@@ -139,8 +141,15 @@
 let alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 
-func moveAlphabet(with offset: Int) -> String {
-    let offset = offset > alphabet.count - 1 ? offset % alphabet.count : offset
+func moveAlphabet(with _offset: Int) -> String {
+//    let offset = offset > alphabet.count - 1 ? offset % alphabet.count : offset
+    var offset = abs(_offset)
+    if _offset > alphabet.count - 1 {
+        offset = _offset % alphabet.count
+    } else {
+        offset = _offset
+    }
+    
     if offset == 0 {
         return alphabet
     }
@@ -148,19 +157,23 @@ func moveAlphabet(with offset: Int) -> String {
     return tail + String(alphabet.dropLast(offset))
 }
 
-for i in 0...10 {
-    print(i, moveAlphabet(with: i))
-}
+//for i in 0...10 {
+//    print(i, moveAlphabet(with: i))
+//}
 
 func movedIndex(position: Int, with offset: Int) -> Int {
-    let offset = offset > alphabet.count - 1 ? offset % alphabet.count : offset
+    let absOffset = abs(offset)
+    let offset = absOffset > alphabet.count - 1 ? absOffset % alphabet.count : absOffset
+    if offset == 0 {
+        return position
+    }
     let sum = position + offset
     return sum < alphabet.count ? sum : sum % alphabet.count
 }
 
-func alphabetInDictionary(move: Int) -> [Character: Int] {
+func alphabetInDictionary1(move: Int) -> [Character: Int] {
     var alphabetDict = [Character: Int]()
-    
+    let alphabet = moveAlphabet(with: move)
     for (index, char) in alphabet.enumerated() {
         let position = index + 1
         alphabetDict[char] = position
@@ -169,5 +182,30 @@ func alphabetInDictionary(move: Int) -> [Character: Int] {
     return alphabetDict
 }
 
-let dictionary = alphabetInDictionary(move: 15).sorted(by: <)
-print(dictionary)
+func alphabetInDictionary2(move: Int) -> [Character: Int] {
+    var alphabetDict = [Character: Int]()
+    
+    for (index, char) in alphabet.enumerated() {
+        let position = index + 1
+
+        alphabetDict[char] = movedIndex(position: position, with: move)
+    }
+    
+    return alphabetDict
+}
+//let numberOfRepeats = 1000
+//let start = Date().timeIntervalSinceReferenceDate
+//var dictionary1 : [(Character, Int)] = []
+//for _ in 0..<numberOfRepeats {
+//    dictionary1 = alphabetInDictionary1(move: 15).sorted(by: {$0.value < $1.value})
+//}
+//    print(dictionary1)
+//let mid = Date().timeIntervalSinceReferenceDate
+//var dictionary2 : [(Character, Int)] = []
+//for _ in 0..<numberOfRepeats {
+//    dictionary2 = alphabetInDictionary2(move: 15).sorted(by:{$0.value < $1.value})
+//}
+//    print(dictionary2)
+//let end = Date().timeIntervalSinceReferenceDate
+//print(mid - start)
+//print(end - mid)
