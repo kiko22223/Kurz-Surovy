@@ -6,8 +6,19 @@
 //
 
 import Foundation
+import SwiftUI
 class Code {
+    
     fileprivate let alphabet = "aáäbcčdďdzdžeéfghchiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž1234567890?!"
+
+    func alphabet (alph: String) -> String {
+        if alph.isEmpty {
+            return "aáäbcčdďdzdžeéfghchiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž1234567890?!"
+        } else {
+            return alph
+        }
+    }
+    
     var count : Int {
         return alphabet.count
     }

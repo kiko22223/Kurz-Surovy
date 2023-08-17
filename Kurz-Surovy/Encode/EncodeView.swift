@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct EncodeView: View {
     @State private var numberOfTimes = 0
     @State private var messageToHide = ""
@@ -26,6 +25,7 @@ struct EncodeView: View {
     }
 
     var body: some View {
+
         Form(content: {
             SwiftUI.Section("Enter your message you want to hide") {
                 TextField("Enter message", text: $messageToHide)
@@ -60,6 +60,10 @@ struct EncodeView: View {
                 Text(hiddenMessage)
             }
         })
+        .toolbar{
+                NavigationLink("Settings", destination: SettingsView())
+            Image(systemName: "gear").foregroundColor(.blue)
+        }
     }
 }
 

@@ -46,7 +46,7 @@ struct DecodeView: View {
             if computing {
                 Text("Computing")
             }
-
+            
             SwiftUI.Section("Your decoded message"){
                 Text(unhiddenMessage)
                 if copied {
@@ -62,6 +62,10 @@ struct DecodeView: View {
                 }
             }
         })
+        .toolbar{
+            NavigationLink("Settings", destination: SettingsView())
+            Image(systemName: "gear").foregroundColor(.blue)
+        }
     }
 }
 
