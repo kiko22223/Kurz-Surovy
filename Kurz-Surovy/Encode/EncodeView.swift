@@ -61,9 +61,16 @@ struct EncodeView: View {
             }
         })
         .toolbar{
-                NavigationLink("Settings", destination: SettingsView())
-            Image(systemName: "gear").foregroundColor(.blue)
+            ToolbarItem {
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Text("Settings")
+                    Image(systemName: "gear")
+                }.tint(.green)
+            }
         }
+        .navigationTitle("Encode")
     }
 }
 
