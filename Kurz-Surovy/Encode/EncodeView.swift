@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct EncodeView: View {
-    @State private var numberOfTimes = 0
+    
     @State private var messageToHide = ""
     @State private var copied = false
     @State private var hiddenMessage : String = ""
@@ -18,7 +18,7 @@ struct EncodeView: View {
 
     private func compute() {
         computing = true
-        hiddenMessage = encodeFuncs.codeString(text: messageToHide, numberOfIterations: numberOfTimes)
+        hiddenMessage = encodeFuncs.codeString(text: messageToHide)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             computing = false
         }
@@ -31,14 +31,6 @@ struct EncodeView: View {
                 TextField("Enter message", text: $messageToHide)
                     .disableAutocorrection(true)
                     .onChange(of: messageToHide) { _ in
-                        compute()
-                    }
-                Picker("How many times is message encoded", selection: $numberOfTimes) {
-                    ForEach(0...5, id: \.self){ number in
-                        Text(String(number))
-                    }
-                }.pickerStyle(.menu)
-                    .onChange(of: numberOfTimes) { _ in
                         compute()
                     }
                 }
@@ -71,6 +63,7 @@ struct EncodeView: View {
             }
         }
         .navigationTitle("Encode")
+//        .onAppear{compute()}
     }
 }
 

@@ -9,16 +9,12 @@ import Foundation
 import SwiftUI
 class Code {
     
-    fileprivate let alphabet = "aáäbcčdďdzdžeéfghchiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž1234567890?!"
-
-    func alphabet (alph: String) -> String {
-        if alph.isEmpty {
-            return "aáäbcčdďdzdžeéfghchiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž1234567890?!"
-        } else {
-            return alph
-        }
-    }
+    private let defaultAlphabet = "aáäbcčdďdzdžeéfghchiíjklĺľmnňoóôpqrŕsštťuúvwxyýzž1234567890?!"
     
+    var alphabet : String {
+        return UserDefaults.standard.string(forKey: Constants.alph) ?? defaultAlphabet
+    }
+    var numberOfIterations = UserDefaults.standard.integer(forKey: Constants.numberOfIterations)
     var count : Int {
         return alphabet.count
     }
@@ -62,7 +58,8 @@ class Encode: Code {
         return alphabetDict
     }
     
-    public func codeString (text: String, numberOfIterations: Int) -> String {
+    public func codeString (text: String) -> String {
+        let numberOfIterations = numberOfIterations
         if numberOfIterations == 0 {
             return text
         }
@@ -73,7 +70,7 @@ class Encode: Code {
             arrayOfIndexes.append(dictionary[letter] ?? 0)
         }
         let codedText = String(arrayOfIndexes.map({String($0)}).joined(separator: " "))
-        return codeString(text: codedText, numberOfIterations: numberOfIterations - 1)
+        return codeString(text: codedText)
     }
     
 }
