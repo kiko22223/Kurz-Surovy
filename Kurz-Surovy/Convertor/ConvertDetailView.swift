@@ -50,7 +50,7 @@ struct ConvertDetailView: View {
             Text("Number of opens: \(numberOfClics)")
             Button("Delete all views") {
                 numberOfClics = 0
-                self.presentation.wrappedValue.dismiss()
+                presentation.wrappedValue.dismiss()
             }
             SwiftUI.Section(units.sections[0].title) {
                 TextField("Zadaj hodnotu", value: $zadanaHodnota , format: .number )

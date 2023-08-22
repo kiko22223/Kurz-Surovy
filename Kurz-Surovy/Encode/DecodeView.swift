@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UniformTypeIdentifiers
 
 struct DecodeView: View {
     @State var copied = false
@@ -14,20 +13,25 @@ struct DecodeView: View {
     @State private var numberOfTimes = 0
     @State private var unhiddenMessage : String = ""
     @State private var computing = false
+    @State private var decode: Decode
     
     let clipboard = UIPasteboard.general
-    let decodeFuncs = Decode()
+    
+    init() {
+        let settings = CodeSettings.load(key: Constants.codeSettingsKey) ?? CodeSettings()
+        decode = Decode(settings: settings)
+    }
     
     private func compute() {
         computing = true
-        unhiddenMessage = decodeFuncs.decodeInts(input: numbersMessage, numberOfIterations: numberOfTimes)
+        unhiddenMessage = decode.decodeInts(input: numbersMessage, numberOfIterations: numberOfTimes)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             computing = false
         }
     }
     
     var body: some View {
-        Form(content: {
+        Form{
             SwiftUI.Section("Enter your message you want to show") {
                 TextField("Enter your message to decode", text: $numbersMessage)
                     .disableAutocorrection(true)
@@ -61,10 +65,19 @@ struct DecodeView: View {
                     }
                 }
             }
-        })
+        }
         .toolbar{
-            NavigationLink("Settings", destination: SettingsView())
-            Image(systemName: "gear").foregroundColor(.blue)
+            ToolbarItem {
+                NavigationLink {
+                    SettingsView(codeSettings: decode.settings, completion: { newSettings in
+                        decode = Decode(settings: newSettings)
+                        compute()
+                    })
+                } label: {
+                    Text("Settings")
+                    Image(systemName: "gear")
+                }.tint(.green)
+            }
         }
     }
 }

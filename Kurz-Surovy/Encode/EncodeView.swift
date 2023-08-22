@@ -6,19 +6,25 @@
 //
 
 import SwiftUI
+
 struct EncodeView: View {
     
     @State private var messageToHide = ""
     @State private var copied = false
     @State private var hiddenMessage : String = ""
     @State private var computing = false
-
-    private let encodeFuncs = Encode()
+    @State private var encode: Encode
+    
     private let clipboard = UIPasteboard.general
+    
+    init() {
+        let settings = CodeSettings.load(key: Constants.codeSettingsKey) ?? CodeSettings()
+        self.encode = Encode(settings: settings)
+    }
 
     private func compute() {
         computing = true
-        hiddenMessage = encodeFuncs.codeString(text: messageToHide)
+        hiddenMessage = encode.codeString(text: messageToHide)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             computing = false
         }
@@ -26,7 +32,7 @@ struct EncodeView: View {
 
     var body: some View {
 
-        Form(content: {
+        Form {
             SwiftUI.Section("Enter your message you want to hide") {
                 TextField("Enter message", text: $messageToHide)
                     .disableAutocorrection(true)
@@ -51,11 +57,14 @@ struct EncodeView: View {
                 }
                 Text(hiddenMessage)
             }
-        })
+        }
         .toolbar{
             ToolbarItem {
                 NavigationLink {
-                    SettingsView()
+                    SettingsView(codeSettings: encode.settings, completion: { newSettings in
+                        encode = Encode(settings: newSettings)
+                        compute()
+                    })
                 } label: {
                     Text("Settings")
                     Image(systemName: "gear")
@@ -63,7 +72,6 @@ struct EncodeView: View {
             }
         }
         .navigationTitle("Encode")
-//        .onAppear{compute()}
     }
 }
 

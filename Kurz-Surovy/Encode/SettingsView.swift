@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct SettingsView: View {
-    let codeModel = Code()
-    @State private var myAlphabet : String = ""
+    let codeSettings: CodeSettings
+    let completion: (CodeSettings) -> Void
+    @Environment(\.presentationMode) var presentation
+    @State var myAlphabet : String = ""
     @State private var numberOfTimes : Int = 0
-    @State private var modulo : Int = 0
-    
+    @State private var modulo : Int = 1
     
     var body: some View {
-        Form {
+        Form(content: {
             SwiftUI.Section ("Enter your own alphabet") {
                 TextField("Alphabet", text: $myAlphabet, axis: .vertical)
                     .lineLimit(4)
-                    .onChange(of: myAlphabet) { newAlphabet in
-                        UserDefaults.standard.setValue(newAlphabet, forKey: Constants.alph)
-                    }
             }
             SwiftUI.Section ("Set you encryption parameters"){
                 Picker("How many times is message encoded", selection: $numberOfTimes) {
@@ -29,28 +27,34 @@ struct SettingsView: View {
                         Text(String(number))
                     }
                 }.pickerStyle(.menu)
-                    .onChange(of: numberOfTimes) { newNumberOfTimes in
-                        UserDefaults.standard.setValue(newNumberOfTimes, forKey: Constants.numberOfIterations)
-                    }
                 Picker("Modulo of computing encryption", selection: $modulo) {
-                    ForEach(0...5, id: \.self){ number in
+                    ForEach(1...5, id: \.self){ number in
                         Text(String(number))
                     }
+                }.pickerStyle(.menu)
+            }
+            SwiftUI.Section("") {
+                Button("Save") {
+                    let newSettings = CodeSettings(alphabet: myAlphabet,
+                                                   numberOfIterations: numberOfTimes,
+                                                   modulo: modulo)
+                    newSettings.save(key: Constants.codeSettingsKey)
+                    completion(newSettings)
+                    presentation.wrappedValue.dismiss()
                 }
             }
-        }
+        })
         .navigationTitle("Settings")
         .onAppear{
-            myAlphabet = codeModel.alphabet
-            numberOfTimes = codeModel.numberOfIterations
-            
+            myAlphabet = codeSettings.alphabet
+            numberOfTimes = codeSettings.numberOfIterations
+            modulo = codeSettings.modulo
         }
     }
     
     struct SettingsView_Previews: PreviewProvider {
         static var previews: some View {
-            SettingsView()
-            
+            SettingsView(codeSettings: CodeSettings()) {_ in}
         }
     }
 }

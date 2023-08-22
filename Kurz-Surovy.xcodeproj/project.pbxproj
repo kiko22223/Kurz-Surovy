@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3761D6042A952D29002864CF /* CodeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761D6032A952D29002864CF /* CodeSettings.swift */; };
+		3761D6062A952D57002864CF /* Codable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761D6052A952D57002864CF /* Codable+.swift */; };
+		3761D60A2A952E4C002864CF /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761D6092A952E4C002864CF /* Code.swift */; };
+		3761D60D2A952E65002864CF /* Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761D60C2A952E65002864CF /* Encode.swift */; };
+		3761D6102A952ED1002864CF /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761D60F2A952ED1002864CF /* Decode.swift */; };
 		96101DA22A53446800CBC098 /* SplitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96101DA12A53446800CBC098 /* SplitterView.swift */; };
 		967B1E582A4DE2CF00CFE6E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B1E572A4DE2CF00CFE6E8 /* Constants.swift */; };
 		967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */; };
 		967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ConvertMenuView.swift */; };
 		967FD6882A112EC40081BE81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD6872A112EC40081BE81 /* Assets.xcassets */; };
 		967FD68B2A112EC40081BE81 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967FD68A2A112EC40081BE81 /* Preview Assets.xcassets */; };
-		9680CAEA2A7BD2FA00F5DFE1 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9680CAE92A7BD2FA00F5DFE1 /* Code.swift */; };
 		969A1F3A2A35181B004311CC /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A1F392A35181B004311CC /* Units.swift */; };
 		969A1F3C2A351B00004311CC /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A1F3B2A351B00004311CC /* Section.swift */; };
 		96CA37302A8D41FD0095A793 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CA372F2A8D41FD0095A793 /* SettingsView.swift */; };
@@ -26,6 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3761D6032A952D29002864CF /* CodeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSettings.swift; sourceTree = "<group>"; };
+		3761D6052A952D57002864CF /* Codable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+.swift"; sourceTree = "<group>"; };
+		3761D6092A952E4C002864CF /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
+		3761D60C2A952E65002864CF /* Encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encode.swift; sourceTree = "<group>"; };
+		3761D60F2A952ED1002864CF /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		96101DA12A53446800CBC098 /* SplitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitterView.swift; sourceTree = "<group>"; };
 		967B1E572A4DE2CF00CFE6E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		967FD6802A112EC30081BE81 /* Kurz-Surovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kurz-Surovy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,7 +42,6 @@
 		967FD6852A112EC30081BE81 /* ConvertMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertMenuView.swift; sourceTree = "<group>"; };
 		967FD6872A112EC40081BE81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		967FD68A2A112EC40081BE81 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9680CAE92A7BD2FA00F5DFE1 /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
 		969A1F392A35181B004311CC /* Units.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		969A1F3B2A351B00004311CC /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		96CA372F2A8D41FD0095A793 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -57,6 +65,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3761D6072A952DF9002864CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3761D6032A952D29002864CF /* CodeSettings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3761D6082A952E0E002864CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3761D6052A952D57002864CF /* Codable+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3761D60E2A952EAC002864CF /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				3761D6092A952E4C002864CF /* Code.swift */,
+				3761D60C2A952E65002864CF /* Encode.swift */,
+				3761D60F2A952ED1002864CF /* Decode.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		37E24CD52A4B408D00C57487 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,9 +179,11 @@
 		96DDBF002A6D93B900280C96 /* Encode */ = {
 			isa = PBXGroup;
 			children = (
+				3761D60E2A952EAC002864CF /* Worker */,
+				3761D6082A952E0E002864CF /* Extensions */,
+				3761D6072A952DF9002864CF /* Model */,
 				96DDBF012A6D93D100280C96 /* EncodeView.swift */,
 				96DDBF032A6DA7C000280C96 /* DecodeView.swift */,
-				9680CAE92A7BD2FA00F5DFE1 /* Code.swift */,
 				96CA372F2A8D41FD0095A793 /* SettingsView.swift */,
 			);
 			path = Encode;
@@ -225,17 +261,21 @@
 			files = (
 				969A1F3C2A351B00004311CC /* Section.swift in Sources */,
 				96D732262A4B3AA100BE6C55 /* SplitBill.swift in Sources */,
+				3761D6102A952ED1002864CF /* Decode.swift in Sources */,
 				967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */,
+				3761D60D2A952E65002864CF /* Encode.swift in Sources */,
 				967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */,
 				96101DA22A53446800CBC098 /* SplitterView.swift in Sources */,
-				9680CAEA2A7BD2FA00F5DFE1 /* Code.swift in Sources */,
 				96DDBF022A6D93D100280C96 /* EncodeView.swift in Sources */,
 				96CA37302A8D41FD0095A793 /* SettingsView.swift in Sources */,
 				969A1F3A2A35181B004311CC /* Units.swift in Sources */,
 				96DDBF042A6DA7C000280C96 /* DecodeView.swift in Sources */,
 				96CD96E22A3643C000A5AE89 /* ConvertDetailView.swift in Sources */,
 				96CD96E02A36405000A5AE89 /* LinkViewDescription.swift in Sources */,
+				3761D60A2A952E4C002864CF /* Code.swift in Sources */,
+				3761D6042A952D29002864CF /* CodeSettings.swift in Sources */,
 				96EDABFC2A13635200F614DC /* LinkView.swift in Sources */,
+				3761D6062A952D57002864CF /* Codable+.swift in Sources */,
 				967B1E582A4DE2CF00CFE6E8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

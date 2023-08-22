@@ -10,6 +10,5 @@ struct Constants {
     static let lastUsedUnitKey = "LastUsedUnit"
     static let lastUsedValueKey = "LastUsedValue"
     static let numberOfClicsKey = "NumberOfClics"
-    static let numberOfIterations = "numberOfIterations"
-    static let alph = "alph"
+    static let codeSettingsKey = "codeSettings"
 }
