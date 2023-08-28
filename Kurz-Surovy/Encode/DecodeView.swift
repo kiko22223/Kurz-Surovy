@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DecodeView: View {
-    @State var copied = false
+    @State private var copied = false
     @State private var numbersMessage : String = ""
     @State private var numberOfTimes = 0
     @State private var unhiddenMessage : String = ""
@@ -19,12 +19,12 @@ struct DecodeView: View {
     
     init() {
         let settings = CodeSettings.load(key: Constants.codeSettingsKey) ?? CodeSettings()
-        decode = Decode(settings: settings)
+        self.decode = Decode(settings: settings)
     }
     
     private func compute() {
         computing = true
-        unhiddenMessage = decode.decodeInts(input: numbersMessage, numberOfIterations: numberOfTimes)
+        unhiddenMessage = decode.decodeInts(input: numbersMessage)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             computing = false
         }

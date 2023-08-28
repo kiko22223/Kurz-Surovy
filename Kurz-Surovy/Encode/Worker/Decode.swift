@@ -17,9 +17,8 @@ class Decode: Code {
         return alphabetDict
     }
     
-    public func decodeInts (input: String, numberOfIterations: Int) -> String {
-        
-        if numberOfIterations == 0 {
+    public func decodeInts (input: String) -> String {
+        if settings.numberOfIterations == 0 {
             return input
         }
         
@@ -44,7 +43,7 @@ class Decode: Code {
             }
         }
         let decodedText = String(arrayOfChar)
-        return decodeInts(input: decodedText, numberOfIterations: numberOfIterations - 1)
+        return decodeInts(input: decodedText)
     }
 }
 
