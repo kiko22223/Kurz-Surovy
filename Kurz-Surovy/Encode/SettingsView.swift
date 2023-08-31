@@ -13,7 +13,7 @@ struct SettingsView: View {
     @Environment(\.presentationMode) var presentation
     @State var myAlphabet : String = ""
     @State private var numberOfTimes : Int = 0
-    @State private var modulo : Int = 1
+    @State private var offsets : String = ""
     
     var body: some View {
         Form(content: {
@@ -27,17 +27,22 @@ struct SettingsView: View {
                         Text(String(number))
                     }
                 }.pickerStyle(.menu)
-                Picker("Modulo of computing encryption", selection: $modulo) {
-                    ForEach(1...5, id: \.self){ number in
-                        Text(String(number))
-                    }
-                }.pickerStyle(.menu)
+                TextField("Offsets", text: $offsets)
+                    .keyboardType(.decimalPad)
             }
             SwiftUI.Section("") {
                 Button("Save") {
+                    let stringParts = offsets.split(separator: Constants.separator)
+                    var numbers = [Int]()
+                    for str in stringParts {
+                        if let number = Int(str) {
+                            numbers.append(number)
+                        }
+                    }
+                    print(numbers)
                     let newSettings = CodeSettings(alphabet: myAlphabet,
                                                    numberOfIterations: numberOfTimes,
-                                                   modulo: modulo)
+                                                   offsets: numbers)
                     newSettings.save(key: Constants.codeSettingsKey)
                     completion(newSettings)
                     presentation.wrappedValue.dismiss()
@@ -48,7 +53,8 @@ struct SettingsView: View {
         .onAppear{
             myAlphabet = codeSettings.alphabet
             numberOfTimes = codeSettings.numberOfIterations
-            modulo = codeSettings.modulo
+            offsets = codeSettings.offsets.map({String($0)}).joined(separator: Constants.separator)
+            print(offsets)
         }
     }
     

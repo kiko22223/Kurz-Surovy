@@ -5,6 +5,13 @@
 //  Created by Radovan Bojkovský on 22/08/2023.
 //
 
+//
+//  Decode.swift
+//  Kurz-Surovy
+//
+//  Created by Radovan Bojkovský on 22/08/2023.
+//
+
 class Decode: Code {
     private func createIntCharDictionary(offset : Int) -> [Int : Character] {
         var alphabetDict = [Int : Character]()
@@ -16,15 +23,21 @@ class Decode: Code {
         
         return alphabetDict
     }
-    
     public func decodeInts (input: String) -> String {
         if settings.numberOfIterations == 0 {
             return input
         }
+        return decodeInts(input: input, iteration: settings.numberOfIterations)
+    }
+    
+    private func decodeInts (input: String, iteration: Int) -> String {
+        if iteration == 0 {
+            return input
+        }
         
         var arrayOfChar = [Character]()
-        let dictionary = createIntCharDictionary(offset: 0)
-        
+        let dictionary = createIntCharDictionary(offset: settings.offsets[safe: iteration - 1] ?? 0)
+        print(iteration - 1)
         let stringParts = input.split(separator: " ")
         var numbers = [Int]()
         for str in stringParts {
@@ -43,7 +56,7 @@ class Decode: Code {
             }
         }
         let decodedText = String(arrayOfChar)
-        return decodeInts(input: decodedText)
+        return decodeInts(input: decodedText, iteration: iteration - 1)
     }
 }
 

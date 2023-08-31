@@ -11,4 +11,5 @@ struct Constants {
     static let lastUsedValueKey = "LastUsedValue"
     static let numberOfClicsKey = "NumberOfClics"
     static let codeSettingsKey = "codeSettings"
+    static let separator = "."
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct DecodeView: View {
     @State private var copied = false
     @State private var numbersMessage : String = ""
-    @State private var numberOfTimes = 0
     @State private var unhiddenMessage : String = ""
     @State private var computing = false
     @State private var decode: Decode
@@ -36,14 +35,6 @@ struct DecodeView: View {
                 TextField("Enter your message to decode", text: $numbersMessage)
                     .disableAutocorrection(true)
                     .onChange(of: numbersMessage) { _ in
-                        compute()
-                    }
-                Picker("How many times is message decoded", selection: $numberOfTimes) {
-                    ForEach(0...5, id: \.self){ number in
-                        Text(String(number))
-                    }
-                }.pickerStyle(.menu)
-                    .onChange(of: numberOfTimes) { _ in
                         compute()
                     }
             }

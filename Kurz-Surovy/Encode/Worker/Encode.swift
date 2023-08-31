@@ -29,7 +29,8 @@ class Encode: Code {
         if iteration == 0 {
             return text
         }
-        let dictionary = alphabetInDictionary(offset: 0)
+        let dictionary = alphabetInDictionary(offset: settings.offsets[safe:settings.numberOfIterations - iteration] ?? 0)
+        print(iteration, settings.numberOfIterations - iteration)
         var arrayOfIndexes = [Int]()
         let text = text.lowercased()
         for letter in text {
