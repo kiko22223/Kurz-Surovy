@@ -56,6 +56,10 @@ struct SettingsView: View {
             offsets = codeSettings.offsets.map({String($0)}).joined(separator: Constants.separator)
             print(offsets)
         }
+        .toolbar {
+            Image(systemName: "opticaldiscdrive")
+            Image(systemName: "square.and.arrow.up")
+        }
     }
     
     struct SettingsView_Previews: PreviewProvider {
