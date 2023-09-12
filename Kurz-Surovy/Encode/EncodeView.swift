@@ -61,7 +61,7 @@ struct EncodeView: View {
         .toolbar{
             ToolbarItem {
                 NavigationLink {
-                    SettingsView(codeSettings: encode.settings, completion: { newSettings in
+                    EditSettingsView(codeSettings: encode.settings, isDefault: false, completion: { newSettings in
                         encode = Encode(settings: newSettings)
                         compute()
                     })

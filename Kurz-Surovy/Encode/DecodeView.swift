@@ -60,7 +60,7 @@ struct DecodeView: View {
         .toolbar{
             ToolbarItem {
                 NavigationLink {
-                    SettingsView(codeSettings: decode.settings, completion: { newSettings in
+                    EditSettingsView(codeSettings: decode.settings, isDefault: true, completion: { newSettings in
                         decode = Decode(settings: newSettings)
                         compute()
                     })
