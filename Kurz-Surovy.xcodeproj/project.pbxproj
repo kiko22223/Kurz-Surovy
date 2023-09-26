@@ -14,6 +14,7 @@
 		3761D60D2A952E65002864CF /* Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761D60C2A952E65002864CF /* Encode.swift */; };
 		3761D6102A952ED1002864CF /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3761D60F2A952ED1002864CF /* Decode.swift */; };
 		96101DA22A53446800CBC098 /* SplitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96101DA12A53446800CBC098 /* SplitterView.swift */; };
+		9673AEA32AC33B7F000CB7D6 /* ImportSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9673AEA22AC33B7F000CB7D6 /* ImportSettingsView.swift */; };
 		967B1E582A4DE2CF00CFE6E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967B1E572A4DE2CF00CFE6E8 /* Constants.swift */; };
 		967FD6842A112EC30081BE81 /* Kurz_SurovyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */; };
 		967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967FD6852A112EC30081BE81 /* ConvertMenuView.swift */; };
@@ -39,6 +40,7 @@
 		3761D60C2A952E65002864CF /* Encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encode.swift; sourceTree = "<group>"; };
 		3761D60F2A952ED1002864CF /* Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decode.swift; sourceTree = "<group>"; };
 		96101DA12A53446800CBC098 /* SplitterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitterView.swift; sourceTree = "<group>"; };
+		9673AEA22AC33B7F000CB7D6 /* ImportSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSettingsView.swift; sourceTree = "<group>"; };
 		967B1E572A4DE2CF00CFE6E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		967FD6802A112EC30081BE81 /* Kurz-Surovy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kurz-Surovy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		967FD6832A112EC30081BE81 /* Kurz_SurovyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kurz_SurovyApp.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				96DDBF012A6D93D100280C96 /* EncodeView.swift */,
 				96DDBF032A6DA7C000280C96 /* DecodeView.swift */,
 				96CA372F2A8D41FD0095A793 /* EditSettingsView.swift */,
+				9673AEA22AC33B7F000CB7D6 /* ImportSettingsView.swift */,
 				374862A62AAE3A6000872462 /* SettingsView.swift */,
 			);
 			path = Encode;
@@ -268,6 +271,7 @@
 				969A1F3C2A351B00004311CC /* Section.swift in Sources */,
 				96D732262A4B3AA100BE6C55 /* SplitBill.swift in Sources */,
 				3761D6102A952ED1002864CF /* Decode.swift in Sources */,
+				9673AEA32AC33B7F000CB7D6 /* ImportSettingsView.swift in Sources */,
 				967FD6862A112EC30081BE81 /* ConvertMenuView.swift in Sources */,
 				3761D60D2A952E65002864CF /* Encode.swift in Sources */,
 				374862A72AAE3A6000872462 /* SettingsView.swift in Sources */,

@@ -60,10 +60,11 @@ struct DecodeView: View {
         .toolbar{
             ToolbarItem {
                 NavigationLink {
-                    EditSettingsView(codeSettings: decode.settings, isDefault: true, completion: { newSettings in
-                        decode = Decode(settings: newSettings)
-                        compute()
-                    })
+//                    EditSettingsView(codeSettings: decode.settings, isDefault: true, completion: { newSettings in
+//                        decode = Decode(settings: newSettings)
+//                        compute()
+//                    })
+                    ImportSettingsView()
                 } label: {
                     Text("Settings")
                     Image(systemName: "gear")

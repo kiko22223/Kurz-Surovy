@@ -17,17 +17,17 @@ struct SettingsView: View {
     
     var body: some View {
         SwiftUI.Section ("All saved pressets") {
-            List {
-                ForEach(codeSettings!.profiles, id: \.self) { presset in
-                    Text(presset).tag(presset)
-                }
-            }
+//            List {
+//                ForEach(codeSettings!.profiles, id: \.self) { presset in
+//                    Text(presset).tag(presset)
+//                }
+//            }
             TextField("Add new profile to save current", text: $newOption)
             Button("Save") {
-                if !newOption.isEmpty {
-                    codeSettings!.profiles.append(newOption)
-                    newOption = ""
-                }
+//                if !newOption.isEmpty {
+//                    codeSettings!.profiles.append(newOption)
+//                    newOption = ""
+//                }
             }
         }
     }
