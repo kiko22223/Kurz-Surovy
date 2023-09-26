@@ -11,12 +11,17 @@ struct EditSettingsView: View {
     let codeSettings: CodeSettings
     let isDefault: Bool
     let completion: (CodeSettings) -> Void
-
+    
     @Environment(\.presentationMode) var presentation
     @State var myAlphabet : String = ""
     @State private var numberOfTimes : Int = 0
     @State private var offsets : String = ""
-
+//    @State private var pressets : [String] = ["Default", "Presset 2", "Presset 3"]
+    @State private var selectedOption : String = "Default"
+    @State private var newOption : String = ""
+    @State private var showModal = false
+    
+    
     func prepareToSave() -> CodeSettings {
         let stringParts = offsets.split(separator: Constants.separator)
         var numbers = [Int]()
@@ -34,7 +39,7 @@ struct EditSettingsView: View {
                             numberOfIterations: numberOfTimes,
                             offsets: numbers)
     }
-
+    
     func makeJSON() -> String {
         let settings = prepareToSave()
         let data = try! JSONEncoder().encode(settings)
@@ -61,37 +66,42 @@ struct EditSettingsView: View {
                         .multilineTextAlignment(.trailing)
                 }
             }
-            if !isDefault {
-                SwiftUI.Section("") {
-                    Button("Save") {
-                        let newSettings = prepareToSave()
-                        newSettings.save(key: Constants.codeSettingsKey)
-                        completion(newSettings)
-                        presentation.wrappedValue.dismiss()
+            SwiftUI.Section ("Pressets settings") {
+                Picker("Choset profile", selection: $selectedOption) {
+                    ForEach(codeSettings.profiles, id: \.self) { preset in
+                        Text(preset).tag(preset)
                     }
                 }
+                .pickerStyle(MenuPickerStyle())
+                
+                NavigationLink("Add new profile",destination: SettingsView(codeSettings: codeSettings))
             }
         })
-        .navigationTitle(isDefault ? "Default setting detail" : "Edit setting")
-        .onAppear{
-            myAlphabet = codeSettings.alphabet
-            numberOfTimes = codeSettings.numberOfIterations
-            offsets = codeSettings.offsets.map({String($0)}).joined(separator: Constants.separator)
-        }
-        .disabled(isDefault)
-        .toolbar {
-            ToolbarItem {
-                ShareLink(item: makeJSON()) {
-                    Image(systemName: "square.and.arrow.up")
-                }.tint(.green)
-            }
 
-        }
+    .navigationTitle(isDefault ? "Default setting detail" : "Edit setting")
+    .onAppear{
+        myAlphabet = codeSettings.alphabet
+        numberOfTimes = codeSettings.numberOfIterations
+        offsets = codeSettings.offsets.map({String($0)}).joined(separator: Constants.separator)
     }
-    
-    struct SettingsView_Previews: PreviewProvider {
-        static var previews: some View {
-            EditSettingsView(codeSettings: CodeSettings(), isDefault: true) {_ in}
+    .disabled(isDefault)
+    .toolbar {
+        ToolbarItem {
+            ShareLink(item: makeJSON()) {
+                Image(systemName: "square.and.arrow.up")
+            }.tint(.green)
+        }
+        
+    }
+}
+}
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        EditSettingsView(codeSettings: CodeSettings(), isDefault: true) { _ in
         }
     }
 }
+
+
+
+
